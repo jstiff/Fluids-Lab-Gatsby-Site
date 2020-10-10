@@ -101,15 +101,17 @@ const IndexPage: React.FC<IndexProps> = props => {
             <SiteNav isHome />
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
-                {props.data.logo ? (
+                {/* {props.data.logo ? (
+                  <h1>{config.title}</h1>
+                ) : (
                   <img
                     style={{ maxHeight: '55px' }}
                     src={props.data.logo.childImageSharp.fixed.src}
                     alt={config.title}
                   />
-                ) : (
                   config.title
-                )}
+                )} */}
+                <h1>{config.title}</h1>
               </SiteTitle>
               <SiteDescription>{config.description}</SiteDescription>
             </SiteHeaderContent>
@@ -145,7 +147,7 @@ const IndexPage: React.FC<IndexProps> = props => {
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/summary_image.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -164,7 +166,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: ASC }
       filter: { frontmatter: { draft: { ne: true } } }
       limit: $limit
       skip: $skip

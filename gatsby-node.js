@@ -12,7 +12,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // eslint-disable-next-line default-case
   switch (node.internal.type) {
     case 'MarkdownRemark': {
+      console.log('pooop', JSON.stringify(node.parent, undefined, 4));
       const { permalink, layout, primaryTag } = node.frontmatter;
+      // console.log('GETnode', getNode(node.parent));
       const { relativePath } = getNode(node.parent);
 
       let slug = permalink;
@@ -117,7 +119,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create post pages
   const posts = result.data.allMarkdownRemark.edges;
-
+  posts.forEach(post => {
+    console.log('$$$$$$$$$$$$', post.node.fields);
+  });
   // Create paginated index
   // TODO: new pagination
   const postsPerPage = 1000;

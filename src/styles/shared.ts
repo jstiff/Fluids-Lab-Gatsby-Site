@@ -54,7 +54,7 @@ export const SiteDescription = styled.h2`
   padding: 5px 0;
   font-size: 2.1rem;
   line-height: 1.4em;
-  font-weight: 400;
+  font-weight: 300;
   opacity: 0.8;
 
   @media (max-width: 500px) {
@@ -116,7 +116,7 @@ export const SiteHeaderContent = styled.div`
   align-items: center;
   padding: 6vw 3vw;
   min-height: 200px;
-  max-height: 340px;
+  max-height: 170px;
 `;
 
 export const SiteHeaderStyles = css`

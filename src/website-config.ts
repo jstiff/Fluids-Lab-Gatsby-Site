@@ -51,7 +51,7 @@ export interface WebsiteConfig {
 const config: WebsiteConfig = {
   title: 'Fluids Lab',
 
-  description: 'Fluids Lab of the U of M',
+  description: 'Fluids Lab of the U of M!!!',
   coverImage: 'img/blog-cover.png',
   logo: 'img/ghost-logo.png',
   lang: 'en',
