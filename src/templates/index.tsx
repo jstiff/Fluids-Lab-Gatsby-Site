@@ -125,7 +125,7 @@ const IndexPage: React.FC<IndexProps> = props => {
                 return (
                   (post.node.frontmatter.draft !== true ||
                     process.env.NODE_ENV !== 'production') && (
-                    <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
+                    <PostCard key={post.node.fields.slug} post={post.node} /> // used to make first post larger....put back into <PostCard> above if you want it back "large={index === 1}"
                   )
                 );
               })}
@@ -147,7 +147,7 @@ const IndexPage: React.FC<IndexProps> = props => {
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/summary_image.jpg" }) {
+    logo: file(relativePath: { eq: "img/droplet_abstract_image.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

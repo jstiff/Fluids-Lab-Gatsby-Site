@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-
+//import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+//import Img, { FluidObject } from 'gatsby-image';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
@@ -29,81 +30,158 @@ const PageTemplate = css`
   @media (prefers-color-scheme: dark) {
     .site-main {
       /* background: var(--darkmode); */
-      background: ${colors.darkmode};
+      background: ${colors.greymode};
     }
   }
 `;
 
 const About: React.FC = () => (
-  <IndexLayout>
-    <Helmet>
-      <title>About</title>
-    </Helmet>
-    <Wrapper css={PageTemplate}>
-      <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
-        <div css={[outer, SiteNavMain]}>
-          <div css={inner}>
-            <SiteNav isHome={false} />
+  <>
+    const post = data.markdownRemark;
+    <IndexLayout>
+      <Helmet>
+        <title>About</title>
+      </Helmet>
+      <Wrapper css={PageTemplate}>
+        <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
+          <div css={[outer, SiteNavMain]}>
+            <div css={inner}>
+              <SiteNav isHome={false} />
+            </div>
           </div>
-        </div>
-      </header>
-      <main id="site-main" className="site-main" css={[SiteMain, outer]}>
-        <div css={inner}>
-          <article className="post page" css={[PostFull, NoImage]}>
-            <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">About</PostFullTitle>
-            </PostFullHeader>
+        </header>
+        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+          <div css={inner}>
+            <article className="post page" css={[PostFull, NoImage]}>
+              <PostFullHeader className="post-full-header">
+                <PostFullTitle className="post-full-title">About</PostFullTitle>
+              </PostFullHeader>
 
-            <PostFullContent className="post-full-content">
-              <div className="post-content">
-                <h5>
-                  Goals of the Fluids Lab <br />
-                  {/* GitHub:{' '}
+              <PostFullContent className="post-full-content">
+                <div className="post-content">
+                  <h5>
+                    Goals of the Fluids Lab <br />
+                    {/* GitHub:{' '}
                   <a href="https://github.com/scttcper/gatsby-casper">scttcper/gatsby-casper</a> */}
-                </h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo finibus leo,
-                  non tempus magna vehicula ac. Maecenas mollis ante finibus pharetra imperdiet.
-                  Maecenas in aliquam purus. Nam et massa a nulla fermentum dapibus sit amet in
-                  neque. Ut ipsum ipsum, rhoncus a sodales pellentesque, interdum a elit. Nullam
-                  aliquam tellus nibh, eget laoreet dui aliquet non. Vestibulum malesuada ante at
-                  diam tempus, ac interdum risus scelerisque. Sed ipsum neque, vulputate porta diam
-                  eget, consequat blandit nulla. Integer volutpat velit vitae purus lacinia aliquam.
-                  Integer bibendum ipsum vitae magna pulvinar, nec vehicula dolor vulputate. Nulla
-                  eu massa id orci placerat finibus vel sit amet eros. Vestibulum quis consequat
-                  massa. Sed sagittis sollicitudin massa at commodo. Praesent diam nisi, imperdiet
-                  posuere eleifend nec, blandit ac massa.
-                </p>
-                <p>
-                  Vestibulum semper pretium ipsum nec congue. Ut ac eros nisi. Donec leo sem,
-                  aliquam mollis sapien ultrices, dapibus congue diam. Proin viverra dapibus
-                  blandit. Ut mauris tellus, tristique id felis vel, venenatis vestibulum nunc. Nam
-                  molestie pulvinar nibh, eget egestas augue. Maecenas tellus arcu, mattis ut ipsum
-                  non, sollicitudin convallis nunc. Donec nec neque tristique, aliquet lacus id,
-                  laoreet nunc. Cras dapibus nisi nulla, ullamcorper faucibus neque suscipit ac.
-                  Donec eget orci venenatis justo lobortis volutpat. Proin vel placerat nisl.
-                  Integer arcu nunc, sodales eu fringilla non, aliquam non diam. Cras placerat,
-                  massa et faucibus pretium, ante elit tincidunt tellus, tristique ultricies velit
-                  quam et massa.
-                </p>
-                <p>
-                  In nunc lacus, dapibus vitae lacus sit amet, efficitur iaculis neque. Suspendisse
-                  ut tellus quis leo vestibulum tincidunt. Aenean nec enim ac dolor lacinia semper.
-                  Ut sed laoreet libero. Nunc elementum sollicitudin accumsan. Nunc eu augue neque.
-                  Proin a tortor nibh. Cras eu nisl ornare sapien feugiat pellentesque. Mauris
-                  dignissim vel quam eu pellentesque. Integer sit amet posuere quam, eu ullamcorper
-                  odio. Nullam a lacus tempus sapien dignissim ullamcorper. In hac habitasse platea
-                  dictumst. Proin quis massa aliquam, feugiat tortor sit amet, tincidunt urna. Donec
-                  posuere pulvinar lectus, ac semper ipsum vulputate quis.
-                </p>
-              </div>
-            </PostFullContent>
-          </article>
-        </div>
-      </main>
-      <Footer />
-    </Wrapper>
-  </IndexLayout>
+                  </h5>
+                  <p>
+                    The overarching vision of my research program is to uncover fundamental physical
+                    mechanisms that govern complex engineering applications and natural processes
+                    and to advance fundamental fluid mechanics. Consistent with that vision, my
+                    research group identifies new fluid mechanics phenomena that are motivated by
+                    applications in energy, environment, and materials science and distills them
+                    down to tractable problems based on barebones physical ingredients. The process
+                    of discovering new research questions and formulating them into model problems
+                    is the most important aspect of our research. We then visualize the resultant
+                    model problems with table-top experiments, and simultaneously rationalize the
+                    experiments with mathematical modeling. Together, these provide a comprehensive
+                    physical understanding of the given phenomena.
+                  </p>
+                  <p>
+                    The key research areas in my group comprise the fundamental investigation of (1)
+                    interfacial dynamics of suspension flows, (2) inertia-driven droplets, (3)
+                    two-phase flows through porous media, and (4) dynamics of particle rafts. The
+                    diverse systems of interest involve the dynamics of the fluid-fluid interface
+                    and the emergence of new phenomena when it couples to complex media (e.g.,
+                    suspensions) or to new flow regimes.
+                  </p>
+                </div>
+                {/* {post.frontmatter.image?.childImageSharp && (
+                  <PostFullImage>
+                    <Img
+                      style={{ height: '100%' }}
+                      fluid={post.frontmatter.image.childImageSharp.fluid}
+                      alt={post.frontmatter.title}
+                    />
+                  </PostFullImage>
+                )} */}
+              </PostFullContent>
+            </article>
+          </div>
+        </main>
+        <Footer />
+      </Wrapper>
+    </IndexLayout>
+  </>
 );
+// const PostFullImage = styled.figure`
+//   margin: 25px 0 50px;
+//   height: 650px;
+//   background: ${colors.lightgrey} center center;
+//   background-size: cover;
+//   border-radius: 15px;
 
+//   @media (max-width: 1170px) {
+//     margin: 25px -6vw 50px;
+//     border-radius: 0;
+//     img {
+//       max-width: 1170px;
+//     }
+//   }
+// `;
+// export const query = graphql`
+//   query($slug: String, $primaryTag: String) {
+//     logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+//       childImageSharp {
+//         fixed {
+//           ...GatsbyImageSharpFixed
+//         }
+//       }
+//     }
+//     markdownRemark(fields: { slug: { eq: $slug } }) {
+//       html
+//       htmlAst
+//       excerpt
+//       timeToRead
+//       frontmatter {
+//         title
+//         userDate: date(formatString: "D MMMM YYYY")
+//         date
+//         tags
+//         excerpt
+//         image {
+//           childImageSharp {
+//             fluid(maxWidth: 3720) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         author {
+//           id
+//           bio
+//           avatar {
+//             children {
+//               ... on ImageSharp {
+//                 fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
+//                   ...GatsbyImageSharpFluid
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//     relatedPosts: allMarkdownRemark(
+//       filter: { frontmatter: { tags: { in: [$primaryTag] }, draft: { ne: true } } }
+//       limit: 5
+//       sort: { fields: [frontmatter___date], order: DESC }
+//     ) {
+//       totalCount
+//       edges {
+//         node {
+//           id
+//           timeToRead
+//           excerpt
+//           frontmatter {
+//             title
+//             date
+//           }
+//           fields {
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 export default About;

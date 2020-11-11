@@ -31,7 +31,7 @@ export const SiteMain = css`
   flex-grow: 1;
 
   @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
+    background: ${colors.greymode};
   }
 `;
 
@@ -70,9 +70,10 @@ export const PostFeed = css`
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -20px;
+  margin: 10 -20px;
   padding: 50px 0 0;
   background: #fff;
+  margin-top: 40px;
 
   /* Special Template Styles */
   padding: 40px 0 5vw;

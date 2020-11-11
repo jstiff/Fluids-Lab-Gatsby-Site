@@ -14,6 +14,16 @@
   location: San Francisco
   profile_image: img/alex-knight-326705-unsplash.jpg
 - id: Sungyon Lee
-  avatar: avatars/ghost.png
+  avatar: avatars/sungyon.JPEG
   location: Minneapolis
   bio: Professor of Mechanical Engineering at U of M Twin Cities
+- id: Navid
+  avatar: img/Navid.jpg
+  bio: Post Doc at Cornell
+  profile_image: img/Navid.jpg
+  location: New York
+- id: Rui
+  avatar: img/Rui.jpg
+  bio: Post Doc at U of M Twin cities
+  profile_image: img/Rui.jpg
+  location: Minneapolis

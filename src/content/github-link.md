@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Github Source
-image: img/callum-shaw-555357-unsplash.jpg
-author: [Ghost]
+title: Navid Post
+image: img/project_overview_v2.png
+author: [Navid]
 date: 2019-03-10T10:00:00.000Z
 tags:
   - Source

@@ -1,8 +1,8 @@
 ---
-title: 'Great Gatsby'
-author: [Another Author]
-tags: [poop]
-image: img/marvin-meyer-794521-unsplash.jpg
+title: Rui fluids paper
+author: [Rui]
+tags: [Rui paper]
+image: img/summary_image.jpg
 date: '1922-12-12T10:00:00.000Z'
 draft: false
 ---

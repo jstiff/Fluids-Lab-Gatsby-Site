@@ -1,5 +1,5 @@
 ---
-title: Hele-Shaw cell
+title: Droplets
 author: [Sungyon Lee]
 tags:
   - Fluids

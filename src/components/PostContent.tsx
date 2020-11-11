@@ -32,12 +32,13 @@ const PostContent: React.FC<PostContentProps> = ({ htmlAst }) => {
 export const PostFullContent = styled.section`
   position: relative;
   margin: 0 auto;
-  padding: 0 170px 6vw;
+  padding: 0 120px 11vw;
   min-height: 230px;
   font-family: Georgia, serif;
   font-size: 2rem;
   line-height: 1.6em;
   background: #fff;
+  border-radius: 15px;
 
   @media (max-width: 1170px) {
     padding: 0 11vw;
@@ -335,7 +336,7 @@ export const PostFullContent = styled.section`
   h5 {
     display: block;
     margin: 0.5em 0;
-    padding: 0.4em 1em 0.9em;
+    padding: 1.4em 1em 0.9em;
     border: 0;
     /* color: var(--blue); */
     color: ${colors.blue};

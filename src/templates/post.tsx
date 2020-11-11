@@ -237,12 +237,12 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
           </div>
         </main>
 
-        <ReadNext
+        {/* <ReadNext
           currentPageSlug={location.pathname}
           tags={post.frontmatter.tags}
           relatedPosts={data.relatedPosts}
           pageContext={pageContext}
-        />
+        /> */}
 
         <Footer />
       </Wrapper>
@@ -414,7 +414,8 @@ export const PostFullTitle = styled.h1`
 
 const PostFullImage = styled.figure`
   margin: 25px 0 50px;
-  height: 650px;
+  height: 550px;
+  width: 400px;
   background: ${colors.lightgrey} center center;
   background-size: cover;
   border-radius: 15px;

@@ -1,14 +1,16 @@
 ---
 layout: post
-title: A Full and Comprehensive Style Test
-image: img/testimg-cover.jpg
-author: [Ghost]
+title: Droplets
+image: img/droplet_abstract_image.jpg
+author: [Sungyon Lee]
 date: 1845-09-30T07:03:47.149Z
 tags:
-  - Tests 2
+  - Tag
 ---
 
-Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
+# Droplet breakup in a stagnation-point flow
+
+We experimentally and theoretically investigate the dynamics of a partially wetting water droplet subject to a two dimensional high speed jet of air blowing perpendicularly to the substrate. When the jet velocity is above a critical value, the droplet evolves under wind and splits into two secondary drops. In addition to droplet splitting, we observe depinning of the droplet on one side when the jet is applied at a small distance from the initial centre of the droplet. In parallel with systematic experiments, we develop a mathematical model to compute the coupled evolution of the droplet and an idealised stagnation-point flow. Our simplified lubrication model yields a criterion for the critical jet velocity, as well as the time-scale of the droplet breakup, in qualitative agreement with the experiments.
 
 ---
 

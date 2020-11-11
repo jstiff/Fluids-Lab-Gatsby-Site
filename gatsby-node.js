@@ -119,9 +119,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create post pages
   const posts = result.data.allMarkdownRemark.edges;
-  posts.forEach(post => {
-    console.log('$$$$$$$$$$$$', post.node.fields);
-  });
+
+  // posts.forEach(post => {
+  //   console.log('$$$$$$$$$$$$', post.node.fields);
+  // });
   // Create paginated index
   // TODO: new pagination
   const postsPerPage = 1000;
