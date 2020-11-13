@@ -413,15 +413,15 @@ export const PostFullTitle = styled.h1`
 `;
 
 const PostFullImage = styled.figure`
-  margin: 25px 0 50px;
-  height: 550px;
-  width: 400px;
+  margin: 25px 33% 50px;
+  height: 350px;
+  width: 300px;
   background: ${colors.lightgrey} center center;
   background-size: cover;
-  border-radius: 15px;
+  border-radius: 25px;
 
   @media (max-width: 1170px) {
-    margin: 25px -6vw 50px;
+    margin: 25px 33% 50px;
     border-radius: 0;
     img {
       max-width: 1170px;
@@ -430,10 +430,11 @@ const PostFullImage = styled.figure`
 
   @media (max-width: 800px) {
     height: 400px;
+    margin-left: 33%;
   }
   @media (max-width: 500px) {
     margin-bottom: 4vw;
-    height: 350px;
+    height: 150px;
   }
 `;
 

@@ -115,8 +115,8 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6vw 3vw;
-  min-height: 200px;
+  padding: 1vw 3vw;
+  min-height: 100px;
   max-height: 170px;
 `;
 
@@ -136,7 +136,7 @@ export const SiteHeaderStyles = css`
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 10;
+    z-index: -10;
     display: block;
     background: rgba(0, 0, 0, 0.18);
   }

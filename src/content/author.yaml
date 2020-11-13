@@ -24,6 +24,7 @@
   location: New York
 - id: Rui
   avatar: img/Rui.jpg
+  background: img/blog-cover.png
   bio: Post Doc at U of M Twin cities
   profile_image: img/Rui.jpg
   location: Minneapolis

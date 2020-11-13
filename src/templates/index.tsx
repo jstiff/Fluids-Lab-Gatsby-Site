@@ -125,7 +125,7 @@ const IndexPage: React.FC<IndexProps> = props => {
                 return (
                   (post.node.frontmatter.draft !== true ||
                     process.env.NODE_ENV !== 'production') && (
-                    <PostCard key={post.node.fields.slug} post={post.node} /> // used to make first post larger....put back into <PostCard> above if you want it back "large={index === 1}"
+                    <PostCard key={post.node.fields.slug} post={post.node} large={index === null} />
                   )
                 );
               })}

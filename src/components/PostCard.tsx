@@ -58,7 +58,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
             <p>{post.frontmatter.excerpt || post.excerpt}</p>
           </PostCardExcerpt>
         </Link>
-        <PostCardMeta className="post-card-meta">
+        {/* <PostCardMeta className="post-card-meta">
           <AuthorList authors={post.frontmatter.author} tooltip="small" />
           <PostCardBylineContent className="post-card-byline-content">
             <span>
@@ -76,7 +76,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
               <span className="bull">&bull;</span> {post.timeToRead} min read
             </span>
           </PostCardBylineContent>
-        </PostCardMeta>
+        </PostCardMeta> */}
       </PostCardContent>
     </article>
   );
@@ -161,7 +161,7 @@ const PostCardImageLink = css`
 
 const PostCardImage = styled.div`
   width: auto;
-  height: 200px;
+  height: 250px;
   background: ${colors.lightgrey} no-repeat center center;
   background-size: cover;
 `;

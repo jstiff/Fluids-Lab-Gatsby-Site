@@ -2,7 +2,7 @@
 title: Rui fluids paper
 author: [Rui]
 tags: [Rui paper]
-image: img/summary_image.jpg
+image: img/drop.jpg
 date: '1922-12-12T10:00:00.000Z'
 draft: false
 ---

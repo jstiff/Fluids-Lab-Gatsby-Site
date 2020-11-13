@@ -3,7 +3,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { FluidObject } from 'gatsby-image';
-
+import { Link } from 'gatsby';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
@@ -188,9 +188,10 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <div css={[PostFeed]}>
-              {edges.map(({ node }) => {
+              {/* {edges.map(({ node }) => {
                 return <PostCard key={node.fields.slug} post={node} />;
-              })}
+              })} */}
+              <Link to='/'>home</Link>
             </div>
           </div>
         </main>
@@ -212,6 +213,13 @@ export const pageQuery = graphql`
       profile_image {
         childImageSharp {
           fluid(maxWidth: 3720) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      background {
+        childImageSharp {
+          fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -360,8 +368,8 @@ const AuthorProfileBioImage = css`
   z-index: 10;
   flex-shrink: 0;
   margin: -4px 0 0;
-  width: 110px;
-  height: 110px;
+  width: 175px;
+  height: 175px;
   box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
   border-radius: 100%;
 `;
