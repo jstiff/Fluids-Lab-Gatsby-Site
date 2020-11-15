@@ -54,9 +54,9 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
             )}
             <PostCardTitle className="post-card-title">{post.frontmatter.title}</PostCardTitle>
           </PostCardHeader>
-          <PostCardExcerpt className="post-card-excerpt">
+          {/* <PostCardExcerpt className="post-card-excerpt">
             <p>{post.frontmatter.excerpt || post.excerpt}</p>
-          </PostCardExcerpt>
+          </PostCardExcerpt> */}
         </Link>
         {/* <PostCardMeta className="post-card-meta">
           <AuthorList authors={post.frontmatter.author} tooltip="small" />

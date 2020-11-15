@@ -237,12 +237,12 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
           </div>
         </main>
 
-        {/* <ReadNext
+        <ReadNext
           currentPageSlug={location.pathname}
           tags={post.frontmatter.tags}
           relatedPosts={data.relatedPosts}
           pageContext={pageContext}
-        /> */}
+        /> 
 
         <Footer />
       </Wrapper>
