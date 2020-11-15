@@ -197,7 +197,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                   {post.frontmatter.excerpt}
                 </PostFullCustomExcerpt>
                 <PostFullByline className="post-full-byline">
-                  <section className="post-full-byline-content">
+                  {/* <section className="post-full-byline-content">
                     <AuthorList authors={post.frontmatter.author} tooltip="large" />
                     <section className="post-full-byline-meta">
                       <h4 className="author-name">
@@ -216,14 +216,14 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                         </span>
                       </div>
                     </section>
-                  </section>
+                  </section> */}
                 </PostFullByline>
               </PostFullHeader>
 
               {post.frontmatter.image?.childImageSharp && (
                 <PostFullImage>
                   <Img
-                    style={{ height: '100%' }}
+                    style={{ height: '100%', borderRadius:'8px' }}
                     fluid={post.frontmatter.image.childImageSharp.fluid}
                     alt={post.frontmatter.title}
                   />
@@ -414,9 +414,9 @@ export const PostFullTitle = styled.h1`
 `;
 
 const PostFullImage = styled.figure`
-  margin: 25px 33% 50px;
-  height: 350px;
-  width: 300px;
+  margin: 5px auto 70px;
+  height: 250px;
+  width: 800px;
   background: ${colors.lightgrey} center center;
   background-size: cover;
   border-radius: 25px;
@@ -454,6 +454,7 @@ export const query = graphql`
       excerpt
       timeToRead
       frontmatter {
+        exclude
         title
         userDate: date(formatString: "D MMMM YYYY")
         date
@@ -482,7 +483,7 @@ export const query = graphql`
       }
     }
     relatedPosts: allMarkdownRemark(
-      filter: { frontmatter: { tags: { in: [$primaryTag] }, draft: { ne: true } } }
+      filter: { frontmatter: { tags: { in: [$primaryTag] }, draft: {ne: true}  } }
       limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
     ) {

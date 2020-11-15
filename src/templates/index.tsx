@@ -124,7 +124,7 @@ const IndexPage: React.FC<IndexProps> = props => {
                 // filter out drafts in production
                 return (
                   (post.node.frontmatter.draft !== true ||
-                    process.env.NODE_ENV !== 'production') && (
+                    process.env.NODE_ENV !== 'production') && post.node.frontmatter.exclude !== true && (
                     <PostCard key={post.node.fields.slug} post={post.node} large={index === null} />
                   )
                 );
@@ -175,6 +175,7 @@ export const pageQuery = graphql`
         node {
           timeToRead
           frontmatter {
+            exclude
             title
             date
             tags
