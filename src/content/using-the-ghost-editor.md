@@ -3,9 +3,10 @@ layout: post
 title: 'Particale Fingering'
 author: [Sungyon Lee]
 tags: ['Publications']
-image: img/key.png
+image: img/particle.png
 date: '2015-02-02T23:46:37.121Z'
 draft: false
+exclude: false
 ---
 
 Particle-induced viscous fingering

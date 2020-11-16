@@ -113,11 +113,12 @@ const IndexPage: React.FC<IndexProps> = props => {
                 )} */}
                 <h1>{config.title}</h1>
               </SiteTitle>
-              <SiteDescription>{config.description}</SiteDescription>
+              
             </SiteHeaderContent>
           </div>
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
+          <SiteDescription>{config.description}</SiteDescription>
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
               {props.data.allMarkdownRemark.edges.map((post, index) => {

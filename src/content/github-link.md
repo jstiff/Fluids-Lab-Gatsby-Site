@@ -4,6 +4,7 @@ title: Navid Post
 image: img/project_overview_v2.png
 author: [Navid]
 date: 2019-03-10T10:00:00.000Z
+exclude: false
 tags:
   - Source
 excerpt: Where to find this project on GitHub.

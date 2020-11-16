@@ -28,3 +28,18 @@
   bio: Post Doc at U of M Twin cities
   profile_image: img/Rui.jpg
   location: Minneapolis
+- id: Zih-Yin
+  avatar: img/zih-yin.jpeg
+  bio: Post doc at U of M Twin Cities
+  profile_image: img/zih-yin.jpeg
+  location: Minneapolis
+- id: Zack
+  avatar: img/zack.jpeg
+  bio: Post doc at U of M Twin Cities
+  profile_image: img/zack.jpeg
+  location: Minneapolis
+- id: Ben
+  avatar: img/ben.jpeg
+  bio: Post doc at U of M Twin Cities
+  profile_image: img/ben.jpeg
+  location: Minneapolis

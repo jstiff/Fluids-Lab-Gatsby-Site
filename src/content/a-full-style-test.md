@@ -4,6 +4,7 @@ title: Droplets
 image: img/droplet_abstract_image.jpg
 author: [Sungyon Lee]
 date: 1845-09-30T07:03:47.149Z
+exclude: false
 tags:
   - Tag
 ---

@@ -1,9 +1,11 @@
 import React from 'react';
+import {graphql} from 'gatsby';
 import { Helmet } from 'react-helmet';
 //import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-//import Img, { FluidObject } from 'gatsby-image';
-
+import Img, { FluidObject } from 'gatsby-image';
+import styled from '@emotion/styled';
+//import { PostCard } from '../components/PostCard';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
@@ -35,12 +37,51 @@ const PageTemplate = css`
   }
 `;
 
-const About: React.FC = () => (
+interface AuthorTemplateProps {
+  location: Location;
+  data: {
+    logo: {
+      childImageSharp: {
+        fluid: any;
+      };
+    };
+    allMarkdownRemark: {
+      totalCount: number;
+      edges: Array<{
+        node: PageContext;
+      }>;
+    };
+    authorYaml: {
+      id: string;
+      website?: string;
+      twitter?: string;
+      facebook?: string;
+      location?: string;
+      profile_image?: {
+        childImageSharp: {
+          fluid: FluidObject;
+        };
+      };
+      bio?: string;
+      avatar: {
+        childImageSharp: {
+          fluid: FluidObject;
+        };
+      };
+    };
+  };
+}
+
+
+
+
+const People: React.FC = ({data})=> (
   <>
+    const author = data.authorYaml;
     const post = data.markdownRemark;
     <IndexLayout>
       <Helmet>
-        <title>About</title>
+        <title>People</title>
       </Helmet>
       <Wrapper css={PageTemplate}>
         <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
@@ -54,37 +95,30 @@ const About: React.FC = () => (
           <div css={inner}>
             <article className="post page" css={[PostFull, NoImage]}>
               <PostFullHeader className="post-full-header">
-                <PostFullTitle className="post-full-title">About</PostFullTitle>
+                <PostFullTitle className="post-full-title">People</PostFullTitle>
+
               </PostFullHeader>
 
               <PostFullContent className="post-full-content">
                 <div className="post-content">
                   <h5>
-                    Goals of the Fluids Lab <br />
-                    {/* GitHub:{' '}
-                  <a href="https://github.com/scttcper/gatsby-casper">scttcper/gatsby-casper</a> */}
+                    Fluids Lab Team Members <br />
                   </h5>
-                  <p>
-                    The overarching vision of my research program is to uncover fundamental physical
-                    mechanisms that govern complex engineering applications and natural processes
-                    and to advance fundamental fluid mechanics. Consistent with that vision, my
-                    research group identifies new fluid mechanics phenomena that are motivated by
-                    applications in energy, environment, and materials science and distills them
-                    down to tractable problems based on barebones physical ingredients. The process
-                    of discovering new research questions and formulating them into model problems
-                    is the most important aspect of our research. We then visualize the resultant
-                    model problems with table-top experiments, and simultaneously rationalize the
-                    experiments with mathematical modeling. Together, these provide a comprehensive
-                    physical understanding of the given phenomena.
-                  </p>
-                  <p>
-                    The key research areas in my group comprise the fundamental investigation of (1)
-                    interfacial dynamics of suspension flows, (2) inertia-driven droplets, (3)
-                    two-phase flows through porous media, and (4) dynamics of particle rafts. The
-                    diverse systems of interest involve the dynamics of the fluid-fluid interface
-                    and the emergence of new phenomena when it couples to complex media (e.g.,
-                    suspensions) or to new flow regimes.
-                  </p>
+                  {JSON.stringify(authors)}
+                  {/* {post.frontmatter.image && (
+        <Link className="post-card-image-link" css={PostCardImageLink} to={post.fields.slug}>
+          <PostCardImage className="post-card-image">
+            {post.frontmatter?.image?.childImageSharp?.fluid && (
+              <Img
+                alt={`${post.frontmatter.title} cover image`}
+                style={{ height: '100%' }}
+                fluid={post.frontmatter.image.childImageSharp.fluid}
+              />
+            )}
+          </PostCardImage>
+        </Link>
+      )} */}
+                  
                 </div>
                 {/* {post.frontmatter.image?.childImageSharp && (
                   <PostFullImage>
@@ -104,6 +138,24 @@ const About: React.FC = () => (
     </IndexLayout>
   </>
 );
+
+export const query = graphql`
+  query{
+  allAuthorYaml {
+         edges {
+           node {
+             id
+             avatar {
+               id
+             }
+             bio
+             location
+           }
+         }
+       }
+      
+ }
+`;
 // const PostFullImage = styled.figure`
 //   margin: 25px 0 50px;
 //   height: 650px;
@@ -184,4 +236,18 @@ const About: React.FC = () => (
 //     }
 //   }
 // `;
-export default About;
+
+const PostCardImageLink = css`
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+`;
+
+const PostCardImage = styled.div`
+  width: auto;
+  height: 250px;
+  background: ${colors.lightgrey} no-repeat center center;
+  background-size: cover;
+`;
+export default People;

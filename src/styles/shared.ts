@@ -50,8 +50,8 @@ export const SiteTitle = styled.h1`
 
 export const SiteDescription = styled.h2`
   z-index: 10;
-  margin: 0;
-  padding: 5px 0;
+  margin: 20px 35px;
+  padding: 15px 15%;
   font-size: 2.1rem;
   line-height: 1.4em;
   font-weight: 300;
