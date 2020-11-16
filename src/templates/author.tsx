@@ -3,7 +3,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { FluidObject } from 'gatsby-image';
-import { Link } from 'gatsby';
+import { Img } from 'gatsby';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
@@ -120,7 +120,7 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
           </div>
 
           <ResponsiveHeaderBackground
-            backgroundImage={author.profile_image?.childImageSharp.fluid.src}
+            // backgroundImage={author.profile_image?.childImageSharp.fluid.src}
             css={[outer, SiteHeaderBackground]}
             className="site-header-background"
           >
@@ -132,6 +132,12 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
                   src={data.authorYaml.avatar.childImageSharp.fluid.src}
                   alt={author.id}
                 />
+                {/* <Img
+                  // style={{ marginTop: '8px' }}
+                  css={[AuthorProfileImage, AuthorProfileBioImage]}
+                  fluid={data.authorYaml.avatar.childImageSharp.fluid.src}
+                  alt={author.id}
+                /> */}
                 <AuthHeaderContent className="author-header-content">
                   <SiteTitle className="site-title">{author.id}</SiteTitle>
                   {author.bio && <AuthorBio className="author-bio">{author.bio}</AuthorBio>}
@@ -146,7 +152,7 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
                       {totalCount === 1 && '1 post'}
                       {totalCount === 0 && 'No posts'}
                     </div>
-                    {author.website && (
+                    {/* {author.website && (
                       <AuthorSocialLink className="author-social-link">
                         <AuthorSocialLinkAnchor
                           href={author.website}
@@ -178,7 +184,7 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
                           Facebook
                         </AuthorSocialLinkAnchor>
                       </AuthorSocialLink>
-                    )}
+                    )} */}
                   </div>
                 </AuthHeaderContent>
               </SiteHeaderContent>
@@ -188,10 +194,9 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <div css={[PostFeed]}>
-              {/* {edges.map(({ node }) => {
+              {edges.map(({ node }) => {
                 return <PostCard key={node.fields.slug} post={node} />;
-              })} */}
-              <Link to='/'>home</Link>
+              })}
             </div>
           </div>
         </main>
@@ -368,10 +373,10 @@ const AuthorProfileBioImage = css`
   z-index: 10;
   flex-shrink: 0;
   margin: -4px 0 0;
-  width: 175px;
-  height: 175px;
+  width: 100%;
+  height: 100%;
   box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
-  border-radius: 100%;
+  border-radius: 10px;
 `;
 
 const AuthorSocialLinkAnchor = styled.a`

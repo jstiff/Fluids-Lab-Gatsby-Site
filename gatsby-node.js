@@ -199,6 +199,9 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 };
+// // create the people page
+// const peopleTemplate = path.resolve('./src/templates/people.tsx');
+
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   // adds sourcemaps for tsx in dev mode

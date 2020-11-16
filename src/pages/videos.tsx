@@ -63,15 +63,6 @@ const Videos: React.FC = () => (
                     Library
                   </h2>
                 </div>
-                {/* {post.frontmatter.image?.childImageSharp && (
-                  <PostFullImage>
-                    <Img
-                      style={{ height: '100%' }}
-                      fluid={post.frontmatter.image.childImageSharp.fluid}
-                      alt={post.frontmatter.title}
-                    />
-                  </PostFullImage>
-                )} */}
               </PostFullContent>
             </article>
           </div>

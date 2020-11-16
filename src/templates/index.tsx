@@ -109,11 +109,10 @@ const IndexPage: React.FC<IndexProps> = props => {
                     src={props.data.logo.childImageSharp.fixed.src}
                     alt={config.title}
                   />
-                  config.title
+                 
                 )} */}
                 <h1>{config.title}</h1>
               </SiteTitle>
-              
             </SiteHeaderContent>
           </div>
         </div>
@@ -126,7 +125,7 @@ const IndexPage: React.FC<IndexProps> = props => {
                 return (
                   (post.node.frontmatter.draft !== true ||
                     process.env.NODE_ENV !== 'production') && post.node.frontmatter.exclude !== true && (
-                    <PostCard key={post.node.fields.slug} post={post.node} large={index === null} />
+                    <PostCard key={post.node.fields.slug} post={post.node} />
                   )
                 );
               })}
@@ -148,7 +147,7 @@ const IndexPage: React.FC<IndexProps> = props => {
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/droplet_abstract_image.jpg" }) {
+    logo: file(relativePath: { eq: "img/key.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

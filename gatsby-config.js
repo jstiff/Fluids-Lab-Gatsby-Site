@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Fluids Lab',
+    title: 'Sungyon Research Lab',
     description: 'Dept of Mechanical Engineering U of M Twin Cities',
     siteUrl: 'https://gatsby-casper.netlify.com', // full path to blog - no ending slash
   },

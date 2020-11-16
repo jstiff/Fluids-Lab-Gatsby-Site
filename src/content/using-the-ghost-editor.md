@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Particale Fingering'
-author: [Sungyon Lee]
+author: [Zack]
 tags: ['Publications']
 image: img/particle.png
 date: '2015-02-02T23:46:37.121Z'

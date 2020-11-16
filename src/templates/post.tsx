@@ -92,6 +92,7 @@ export interface PageContext {
         fluid: FluidObject;
       };
     };
+    exclude: boolean;
     excerpt: string;
     title: string;
     date: string;

@@ -1,6 +1,6 @@
 ---
 title: Hele-Shaw cell
-author: [Sungyon Lee]
+author: [Zih-Yin]
 tags:
   - Fluids
 image: img/summary_image.jpg
