@@ -52,10 +52,11 @@ export const SiteDescription = styled.h2`
   z-index: 10;
   margin: 20px 35px;
   padding: 15px 15%;
-  font-size: 2.1rem;
-  line-height: 1.4em;
-  font-weight: 300;
-  opacity: 0.8;
+  font-size: 2.3rem;
+  line-height: 1.6em;
+  font-weight: 200;
+  opacity: 0.9;
+  text-indent: 25px;
 
   @media (max-width: 500px) {
     font-size: 1.8rem;

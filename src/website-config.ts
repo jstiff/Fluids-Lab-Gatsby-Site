@@ -53,7 +53,7 @@ const config: WebsiteConfig = {
 
   description: 'In our fluids research lab, we aim to uncover fundamental physical mechanisms that govern complex engineering applications and natural processes, by distilling them down to tractable problems. The process of discovering new research questions and formulating them into model problems is the most important aspect of our research. We then visualize the resultant model problems with table-top experiments, and simultaneously rationalize the experiments with mathematical modeling. ',
   coverImage: 'img/blog-cover.png',
-  logo: 'img/particle.png',
+  logo: 'avatars/sungyon.JPEG',
   lang: 'en',
   siteUrl: 'https://gatsby-casper.netlify.com',
   facebook: 'https://www.facebook.com/primedigitalacademy/',
