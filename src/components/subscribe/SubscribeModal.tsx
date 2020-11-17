@@ -49,8 +49,7 @@ export class SubscribeModal extends React.Component<any, SubscribeState> {
           <SubscribeLogo />
           <SubscribeOverlayTitle>Subscribe to {config.title}</SubscribeOverlayTitle>
           <SubscribeOverlayDescription>
-            Stay up to date! Get all the latest &amp; greatest posts delivered straight to your
-            inbox
+            Get e-mail notification of new research papers written by the Research Lab.
           </SubscribeOverlayDescription>
           <SubscribeForm />
         </SubscribeOverlayContent>

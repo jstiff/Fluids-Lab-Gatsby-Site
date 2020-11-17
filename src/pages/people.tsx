@@ -1,158 +1,304 @@
+import { graphql, Img } from 'gatsby';
+import { FixedObject } from 'gatsby-image';
 import React from 'react';
-import {graphql} from 'gatsby';
+import { FluidObject } from 'gatsby-image';
 import { Helmet } from 'react-helmet';
-//import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import Img from 'gatsby-image';
-import styled from '@emotion/styled';
-//import { PostCard } from '../components/PostCard';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
-import { PostFullContent } from '../components/PostContent';
+import Pagination from '../components/Pagination';
+// import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
+import { AuthorList } from '../components/AuthorList';
 import {
   inner,
   outer,
-  SiteArchiveHeader,
+  PostFeed,
+  Posts,
+  SiteDescription,
   SiteHeader,
+  SiteHeaderContent,
   SiteMain,
-  SiteNavMain,
+  SiteTitle,
+  SiteHeaderStyles,
+  ResponsiveHeaderBackground,
+  SiteHeaderBackground,
 } from '../styles/shared';
-import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
-import { colors } from '../styles/colors';
+import config from '../website-config';
+import { PageContext, Author } from '../templates/post';
 
-
-const PageTemplate = css`
-  .site-main {
-    margin-top: 64px;
-    padding-bottom: 4vw;
-    background: #fff;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .site-main {
-      /* background: var(--darkmode); */
-      background: ${colors.greymode};
-    }
-  }
-`;
-
-interface AuthorTemplateProps {
-  location: Location;
+export interface IndexProps {
+  pageContext: {
+    currentPage: number;
+    numPages: number;
+  };
   data: {
-    // logo: {
-    //   childImageSharp: {
-    //     fluid: any;
-    //   };
-    // };
-    // allMarkdownRemark: {
-    //   totalCount: number;
-    //   edges: Array<{
-    //     node: PageContext;
-    //   }>;
-    // };
-    authorYaml: {
+    logo: {
+      childImageSharp: {
+        fixed: FixedObject;
+      };
+    };
+    header: {
+      childImageSharp: {
+        fixed: FixedObject;
+      };
+    };
+    allMarkdownRemark: {
+      edges: Array<{
+        node: PageContext;
+      }>;
+    };
+    allAuthorYaml: {
+      edges: Array<{
+        node: Author;
+        bio?: string;
+        avatar: {
+          childImageSharp: {
+            fluid: FluidObject;
+          };
+        };
+      }>;
       id: string;
-      website?: string;
-      twitter?: string;
-      facebook?: string;
+    //   website?: string;
+    //   twitter?: string;
+    //   facebook?: string;
       location?: string;
       profile_image?: {
         childImageSharp: {
           fluid: FluidObject;
         };
       };
-      bio?: string;
-      avatar: {
-        childImageSharp: {
-          fluid: FluidObject;
-        };
-      };
+      
     };
   };
 }
 
+const People: React.FC<IndexProps> = props => {
+  const { width, height } = props.data.header.childImageSharp.fixed;
 
-
-
-const People: React.FC = () => (
-  <>
-    const author = data.authorYaml;
-    
-    const post = data.markdownRemark;
-    <IndexLayout>
+  return (
+    <IndexLayout css={HomePosts}>
       <Helmet>
-        <title>People</title>
+        <html lang={config.lang} />
+        <title>{config.title}</title>
+        <meta name="description" content={config.description} />
+        <meta property="og:site_name" content={config.title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={config.title} />
+        <meta property="og:description" content={config.description} />
+        <meta property="og:url" content={config.siteUrl} />
+        <meta
+          property="og:image"
+          content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
+        />
+        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
+        {config.googleSiteVerification && (
+          <meta name="google-site-verification" content={config.googleSiteVerification} />
+        )}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={config.title} />
+        <meta name="twitter:description" content={config.description} />
+        <meta name="twitter:url" content={config.siteUrl} />
+        <meta
+          name="twitter:image"
+          content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
+        />
+        {config.twitter && (
+          <meta
+            name="twitter:site"
+            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+          />
+        )}
+        <meta property="og:image:width" content={width.toString()} />
+        <meta property="og:image:height" content={height.toString()} />
       </Helmet>
-      <Wrapper css={PageTemplate}>
-        <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
-          <div css={[outer, SiteNavMain]}>
-            <div css={inner}>
-              <SiteNav isHome={false} />
+      <Wrapper>
+        <div
+          css={[outer, SiteHeader, SiteHeaderStyles]}
+          className="site-header-background"
+          style={{
+            backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
+          }}
+        >
+          <div css={inner}>
+            <SiteNav isHome />
+            <SiteHeaderContent className="site-header-conent">
+              <SiteTitle className="site-title" />
+              <SiteDescription><h1>People</h1></SiteDescription>
+            </SiteHeaderContent>
+          </div>
+        </div>
+        <main id="site-main" css={[SiteMain, outer]}>
+         
+          <div css={[inner, Posts]}>
+            <div css={[PostFeed]}>
+              {props.data.allAuthorYaml.edges.map((person, index) => {
+                
+                
+                return <img
+                // style={{ marginTop: '8px' }}
+                // css={[ AuthorProfileBioImage]}
+                src={person.node.avatar.childImageSharp.fluid.src}
+                alt={person.node.id}
+              />
+                  
+              })
+              }
             </div>
           </div>
-        </header>
-        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
-          <div css={inner}>
-            <article className="post page" css={[PostFull, NoImage]}>
-              <PostFullHeader className="post-full-header">
-                <PostFullTitle className="post-full-title">People</PostFullTitle>
-
-              </PostFullHeader>
-
-              <PostFullContent className="post-full-content">
-                <div className="post-content">
-                  <h5>
-                    Fluids Lab Team Members!! <br />
-                  </h5>
-                  
-                  {/* {post.frontmatter.image && (
-        
-          <PostCardImage className="post-card-image">
-            {post.frontmatter?.image?.childImageSharp?.fluid && (
-              <Img
-                
-                style={{ height: '100%' }}
-                fluid={post.frontmatter.image.childImageSharp.fluid}
-              />
-            )}
-          </PostCardImage>
-        
-      )} */}
-                  
-                </div>
-                {post.frontmatter.image?.childImageSharp && (
-                  <PostFullImage>
-                    <Img
-                      style={{ height: '100%' }}
-                      fluid={post.frontmatter.image.childImageSharp.fluid}
-                      alt={post.frontmatter.title}
-                    />
-                  </PostFullImage>
-                )}
-              </PostFullContent>
-            </article>
-          </div>
         </main>
+        {props.children}
+        {props.pageContext.numPages > 1 && (
+          <Pagination
+            currentPage={props.pageContext.currentPage}
+            numPages={props.pageContext.numPages}
+          />
+        )}
         <Footer />
       </Wrapper>
     </IndexLayout>
-  </>
-);
+  );
+};
 
-
-const PostCardImageLink = css`
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: 5px 5px 0 0;
+export const pageQuery = graphql`
+  {
+    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    header: file(relativePath: { eq: "img/blog-cover.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { ne: true } } }
+     
+    ) {
+      edges {
+        node {
+          timeToRead
+          frontmatter {
+            title
+            date
+            tags
+            draft
+            excerpt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 3720) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            author {
+              id
+              bio
+              avatar {
+                children {
+                  ... on ImageSharp {
+                    fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
+          excerpt
+          fields {
+            layout
+            slug
+          }
+        }
+      }
+    }
+    allAuthorYaml {
+        edges {
+          node {
+            id
+            bio
+            location
+            avatar {
+              childImageSharp {
+                fluid {
+                    src
+                }
+              }
+            }
+          } 
+        }
+      }
+    
+  }
 `;
 
-const PostCardImage = styled.div`
-  width: auto;
-  height: 250px;
-  background: ${colors.lightgrey} no-repeat center center;
-  background-size: cover;
+const HomePosts = css`
+  @media (min-width: 795px) {
+    .post-card-large {
+      flex: 1 1 100%;
+      flex-direction: row;
+      padding-bottom: 40px;
+      min-height: 280px;
+      border-top: 0;
+    }
+    .post-card-large .post-card-title {
+      margin-top: 0;
+      font-size: 3.2rem;
+    }
+    .post-card-large:not(.no-image) .post-card-header {
+      margin-top: 0;
+    }
+    .post-card-large .post-card-image-link {
+      position: relative;
+      flex: 1 1 auto;
+      margin-bottom: 0;
+      min-height: 380px;
+    }
+    .post-card-large .post-card-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .post-card-large .post-card-content {
+      flex: 0 1 361px;
+      justify-content: center;
+    }
+    .post-card-large .post-card-title {
+      margin-top: 0;
+      font-size: 3.2rem;
+    }
+    .post-card-large .post-card-content-link {
+      padding: 0 0 0 40px;
+    }
+    .post-card-large .post-card-meta {
+      padding: 0 0 0 40px;
+    }
+    .post-card-large .post-card-excerpt p {
+      margin-bottom: 1.5em;
+      font-size: 1.8rem;
+      line-height: 1.5em;
+    }
+  }
+`;
+const AuthorProfileBioImage = css`
+  z-index: 10;
+  flex-shrink: 0;
+  margin: -4px 0 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
+  border-radius: 10px;
 `;
 export default People;

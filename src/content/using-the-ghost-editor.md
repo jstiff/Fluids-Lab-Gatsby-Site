@@ -7,6 +7,7 @@ image: img/particle.png
 date: '2015-02-02T23:46:37.121Z'
 draft: false
 exclude: false
+excerpt: 'poopies'
 ---
 
 Particle-induced viscous fingering

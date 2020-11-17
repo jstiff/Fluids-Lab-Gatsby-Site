@@ -43,7 +43,6 @@ interface AuthorTemplateProps {
     };
     authorYaml: {
       id: string;
-      website?: string;
       twitter?: string;
       facebook?: string;
       location?: string;
@@ -148,9 +147,9 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
                       </div>
                     )}
                     <div className="author-stats" css={[HiddenMobile]}>
-                      {totalCount > 1 && `${totalCount} posts`}
-                      {totalCount === 1 && '1 post'}
-                      {totalCount === 0 && 'No posts'}
+                      {totalCount > 1 && `${totalCount} papers`}
+                      {totalCount === 1 && '1 paper'}
+                      {totalCount === 0 && 'No papers'}
                     </div>
                     {/* {author.website && (
                       <AuthorSocialLink className="author-social-link">
@@ -210,8 +209,6 @@ export const pageQuery = graphql`
   query($author: String) {
     authorYaml(id: { eq: $author }) {
       id
-      website
-      twitter
       bio
       facebook
       location
