@@ -210,7 +210,6 @@ export const pageQuery = graphql`
     authorYaml(id: { eq: $author }) {
       id
       bio
-      facebook
       location
       profile_image {
         childImageSharp {

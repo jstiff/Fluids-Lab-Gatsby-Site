@@ -22,6 +22,7 @@ import {
   SiteMain,
   SiteTitle,
   SiteHeaderStyles,
+  AuthorProfileImage,
   ResponsiveHeaderBackground,
   SiteHeaderBackground,
 } from '../styles/shared';
@@ -60,9 +61,9 @@ export interface IndexProps {
         };
       }>;
       id: string;
-    //   website?: string;
-    //   twitter?: string;
-    //   facebook?: string;
+      website?: string;
+      twitter?: string;
+      facebook?: string;
       location?: string;
       profile_image?: {
         childImageSharp: {
@@ -130,19 +131,15 @@ const People: React.FC<IndexProps> = props => {
           </div>
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
-         
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
               {props.data.allAuthorYaml.edges.map((person, index) => {
-                
-                
                 return <img
-                // style={{ marginTop: '8px' }}
-                // css={[ AuthorProfileBioImage]}
+                style={{ margin: '18px 0px 10px 8%' }}
+                css={[ AuthorProfileImage, AuthorProfileBioImage]}
                 src={person.node.avatar.childImageSharp.fluid.src}
                 alt={person.node.id}
               />
-                  
               })
               }
             </div>
@@ -295,9 +292,10 @@ const HomePosts = css`
 const AuthorProfileBioImage = css`
   z-index: 10;
   flex-shrink: 0;
-  margin: -4px 0 0;
-  width: 100%;
-  height: 100%;
+  margin: 4px;
+  padding: 5px;
+  width: 250px;
+  height: 280px;
   box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
   border-radius: 10px;
 `;
