@@ -5,6 +5,18 @@ import styled from '@emotion/styled';
 
 import { colors } from './colors';
 
+
+export const outerVid = css`
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const vid = css`
+  margin:25px;
+  padding: 10px;
+`;
+
 export const outer = css`
   position: relative;
   padding: 0 5vw;

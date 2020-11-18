@@ -1,35 +1,35 @@
 - id: Sungyon Lee
   avatar: avatars/sungyon.JPEG
-  location: Minneapolis
+  location: Minneapolis, MN
   background: img/blog-cover.png
   bio: Professor of Mechanical Engineering at U of M Twin Cities
 - id: Navid
   avatar: avatars/Navid.jpg
   bio: Post Doc at Cornell
   profile_image: avatars/Navid.jpg
-  location: New York
+  location: Ithaca, NY
   background: img/blog-cover.png
 - id: Rui
   avatar: avatars/Rui2.jpg
   background: img/blog-cover.png
   bio: Post Doc at U of M Twin cities
   profile_image: avatars/Rui.jpg
-  location: Minneapolis
+  location: Minneapolis, MN
 - id: Zih-Yin
   avatar: avatars/zih-yin.jpg
   bio: Post doc at U of M Twin Cities
   profile_image: avatars/zih-yin.jpeg
-  location: Minneapolis
+  location: Minneapolis, MN
   background: img/blog-cover.png
 - id: Zack
   avatar: avatars/zack.jpg
   bio: Post doc at U of M Twin Cities
   profile_image: avatars/zack.jpeg
-  location: Minneapolis
+  location: Minneapolis, MN
   background: img/blog-cover.png
 - id: Ben
   avatar: avatars/ben.jpg
   bio: Post doc at U of M Twin Cities
   profile_image: avatars/ben.jpeg
-  location: Minneapolis
+  location: Minneapolis, MN
   background: img/blog-cover.png

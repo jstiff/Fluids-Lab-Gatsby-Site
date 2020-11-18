@@ -3,13 +3,15 @@ import { Helmet } from 'react-helmet';
 // import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 // import Img, { FluidObject } from 'gatsby-image';
-
+import Video from '../components/Video';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import {
+  outerVid,
+  vid, 
   inner,
   outer,
   SiteArchiveHeader,
@@ -59,11 +61,27 @@ const Videos: React.FC = () => (
 
               <PostFullContent className="post-full-content">
                 <div className="post-content">
-                  <h2>
-                    Library
-                  </h2>
+                  
                 </div>
+                <div css={[outerVid]}>
+                  <div css={[vid]}>
+                    <Video
+                      videoSrcURL="https://www.youtube.com/embed/qWHtcJOhD34"
+                      videoTitle="Pattern formation in suspension flows,” Saint Anthony Falls Lab, 10/13/2020"
+                    />
+                  </div>
+                
+                  {/* <div css={[vid]}>
+                    <Video
+                      videoSrcURL="http://www.teqipiitk.in/embed/php?e=832"
+                      videoTitle="Official Music Video on YouTube"
+                    />  
+                  </div> */}
+                </div>
+                
+                
               </PostFullContent>
+              
             </article>
           </div>
         </main>

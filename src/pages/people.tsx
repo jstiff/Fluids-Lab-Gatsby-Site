@@ -129,35 +129,19 @@ const People: React.FC<IndexProps> = props => {
             <SiteNav isHome />
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title" />
-              <SiteDescription><h1>People</h1></SiteDescription>
+              <SiteDescription><h1>Meet the Team!</h1></SiteDescription>
             </SiteHeaderContent>
           </div>
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
-                {/* {JSON.stringify(props.data.allAuthorYaml.edges.map((edge) => _.get(edge.node, 'frontmatter.author[0]', [])))} */}
-              {props.data.allAuthorYaml.edges.map((person, index)=>{
-                  return <><AuthorListUl2 className="author-list"><AuthorListItem2 key={person.node.id} author={person.node} tooltip="large" />
-                  {/* <img
-                  style={{ margin: '18px 0px 10px 8%', width: '200px',height:   '275px' }}
-                  css={[  AuthorProfileBioImage]}
-                  src={person.node.avatar.childImageSharp.fluid.src}
-                  alt={person.node.id}
-                  onClick = {()=> alert(`${person.node.id}`)}
-                  key={person.node.id}
-                /> */}
-                </AuthorListUl2></>
-              })}
-              
-                     
-                     
-                   
-               
-                
-              
-              
-            
+               {props.data.allAuthorYaml.edges.map((person, index)=>{
+                  return <>
+                    <AuthorListUl2 className="author-list">
+                        <AuthorListItem2 key={person.node.id} author={person.  node} tooltip="large" />
+                    </AuthorListUl2></>
+                })}
             </div>
           </div>
         </main>

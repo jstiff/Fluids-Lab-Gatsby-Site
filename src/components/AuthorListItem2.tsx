@@ -57,9 +57,11 @@ export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
             <div className="bio">
               <h2>{props.author.id}</h2>
               <p>{props.author.bio}</p>
-              <p>{props.author.location}</p>
+              <p>Location: {props.author.location}</p>
+              <lable>{"e-mail  "}</lable>
+              <a>{"example@gmail.com"}</a>
               <p>
-                <Link to={`/author/${_.kebabCase(props.author.id)}/`}>More posts</Link> by{' '}
+                <Link to={`/author/${_.kebabCase(props.author.id)}/`}>Papers</Link> by{' '}
                 {props.author.id}.
               </p>
             </div>

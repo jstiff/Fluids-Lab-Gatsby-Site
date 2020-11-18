@@ -221,7 +221,7 @@ const AuthorAvatar = css`
   width: 40px;
   height: 40px;
   border: #fff 2px solid;
-  border-radius: 100%;
+  border-radius:100%;
   transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 700ms;
 
   @media (max-width: 500px) {
