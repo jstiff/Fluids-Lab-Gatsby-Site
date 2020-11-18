@@ -13,8 +13,9 @@ export const outer = css`
 // Centered content container blocks
 export const inner = css`
   margin: 0 auto;
-  max-width: 1040px;
+  max-width: 1100px;
   width: 100%;
+  
 `;
 
 export const SiteNavMain = css`
@@ -63,13 +64,15 @@ export const SiteDescription = styled.h2`
   }
 `;
 
-export const Posts = css`
-  overflow-x: hidden;
-`;
+// export const Posts = css`
+//   overflow-x: hidden;
+// `;
 
 export const PostFeed = css`
   position: relative;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 10 -20px;
   padding: 50px 0 0;

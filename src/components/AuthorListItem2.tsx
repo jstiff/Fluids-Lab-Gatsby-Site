@@ -57,6 +57,7 @@ export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
             <div className="bio">
               <h2>{props.author.id}</h2>
               <p>{props.author.bio}</p>
+              <p>{props.author.location}</p>
               <p>
                 <Link to={`/author/${_.kebabCase(props.author.id)}/`}>More posts</Link> by{' '}
                 {props.author.id}.
@@ -103,7 +104,7 @@ const AuthorListItemLi = styled.li`
 const AuthorNameTooltip = styled.div`
   position: absolute;
   bottom: 105%;
-  z-index: -999;
+  z-index: 999;
   display: block;
   padding: 2px 8px;
   color: white;
@@ -131,18 +132,19 @@ const AuthorCardStyles = css`
   z-index: 600;
   display: flex;
   justify-content: space-between;
-  margin-left: -200px;
-  width: 400px;
-  font-size: 1.4rem;
+  margin-left: -250px;
+  margin-bottom: -100px;
+  width: 500px;
+  font-size: 2rem;
   line-height: 1.5em;
   background: white;
-  border-radius: 3px;
+  border-radius: 8px;
   box-shadow: rgba(39, 44, 49, 0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
   opacity: 0;
   transition: all 0.35s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   transform: scale(0.98) translateY(15px);
   pointer-events: none;
-  padding: 20px 20px 22px;
+  padding: 40px 20px 22px;
 
   :before {
     content: '';
@@ -165,7 +167,7 @@ const AuthorCardStyles = css`
 
   .author-info h2 {
     margin: 8px 0 0;
-    font-size: 1.6rem;
+    font-size: 2.6rem;
   }
 
   .author-info p {
@@ -217,9 +219,9 @@ const AuthorCardStyles = css`
 const AuthorAvatar = css`
   display: block;
   overflow: hidden;
-  margin: 0 -4px;
-  width: 140px;
-  height: 140px;
+  margin: 40px;
+  width: 175px;
+  height: 175px;
   border: #fff 2px solid;
   border-radius: 100%;
   transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 700ms;
