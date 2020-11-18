@@ -164,7 +164,7 @@ export const SiteHeaderStyles = css`
 export const AuthorProfileImage = css`
   flex: 0 0 60px;
   margin: 0;
-  width: 60px;
+  width:  60px;
   height: 60px;
   border: none;
 

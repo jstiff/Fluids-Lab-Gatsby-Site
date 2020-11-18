@@ -8,9 +8,11 @@ import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import Pagination from '../components/Pagination';
 // import { PostCard } from '../components/PostCard';
+import styled from '@emotion/styled';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
-import { AuthorList } from '../components/AuthorList';
+import _ from 'lodash';
+import { AuthorListItem2 } from '../components/AuthorListItem2';
 import {
   inner,
   outer,
@@ -28,6 +30,8 @@ import {
 } from '../styles/shared';
 import config from '../website-config';
 import { PageContext, Author } from '../templates/post';
+import { AuthorListUl } from '../components/AuthorList';
+//import Author from '../templates/author';
 
 export interface IndexProps {
   pageContext: {
@@ -70,14 +74,13 @@ export interface IndexProps {
           fluid: FluidObject;
         };
       };
-      
     };
   };
 }
 
 const People: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
-
+   
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
@@ -133,15 +136,28 @@ const People: React.FC<IndexProps> = props => {
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
-              {props.data.allAuthorYaml.edges.map((person, index) => {
-                return <img
-                style={{ margin: '18px 0px 10px 8%' }}
-                css={[ AuthorProfileImage, AuthorProfileBioImage]}
-                src={person.node.avatar.childImageSharp.fluid.src}
-                alt={person.node.id}
-              />
-              })
-              }
+                {/* {JSON.stringify(props.data.allAuthorYaml.edges.map((edge) => _.get(edge.node, 'frontmatter.author[0]', [])))} */}
+              {props.data.allAuthorYaml.edges.map((person, index)=>{
+                  return <><AuthorListUl2 className="author-list"><AuthorListItem2 key={person.node.id} author={person.node} tooltip="large" />
+                  {/* <img
+                  style={{ margin: '18px 0px 10px 8%', width: '200px',height:   '275px' }}
+                  css={[  AuthorProfileBioImage]}
+                  src={person.node.avatar.childImageSharp.fluid.src}
+                  alt={person.node.id}
+                  onClick = {()=> alert(`${person.node.id}`)}
+                  key={person.node.id}
+                /> */}
+                </AuthorListUl2></>
+              })}
+              
+                     
+                     
+                   
+               
+                
+              
+              
+            
             </div>
           </div>
         </main>
@@ -160,7 +176,7 @@ const People: React.FC<IndexProps> = props => {
 
 export const pageQuery = graphql`
   {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/particle.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -203,11 +219,10 @@ export const pageQuery = graphql`
               id
               bio
               avatar {
-                children {
-                  ... on ImageSharp {
-                    fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
-                      ...GatsbyImageSharpFluid
-                    }
+                childImageSharp {
+                  fluid {
+                    srcSet
+                    src
                   }
                 }
               }
@@ -230,7 +245,7 @@ export const pageQuery = graphql`
             avatar {
               childImageSharp {
                 fluid {
-                    src
+                    ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -299,4 +314,16 @@ const AuthorProfileBioImage = css`
   box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
   border-radius: 10px;
 `;
+const AuthorListUl2 = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 100px 0 4px;
+  padding: 0;
+  list-style: none;
+  
+`;
+
+
 export default People;
+
+

@@ -21,7 +21,8 @@ export const AuthorList: React.FC<AuthorListProps> = props => (
 export const AuthorListUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 0 4px;
+  margin: 0 10px 0 4px;
   padding: 0;
   list-style: none;
+  
 `;

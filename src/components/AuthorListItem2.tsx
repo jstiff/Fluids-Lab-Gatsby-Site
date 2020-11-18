@@ -11,13 +11,13 @@ import { Author } from '../templates/post';
 import { AuthorProfileImage } from './PostCard';
 import styled from '@emotion/styled';
 
-interface AuthorListItemProps {
+interface AuthorListItem2Props {
   tooltip: 'small' | 'large';
   author: Author;
 }
 
-export const AuthorListItem: React.FC<AuthorListItemProps> = props => {
-  console.log("INSIDE AuthorListItem ...props", props)
+export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
+  console.log("INSIDE AuthorListItem2 ...props", props)
   const [hovered, setHover] = useState(false);
   let timeout: ReturnType<typeof setTimeout>;
   function handleMouseEnter() {
@@ -45,11 +45,11 @@ export const AuthorListItem: React.FC<AuthorListItemProps> = props => {
       )}
       {props.tooltip === 'large' && (
         <div css={[AuthorCardStyles, hovered && Hovered]} className="author-card">
-          {props.author.avatar.children.length && (
+          { props.author.avatar.childImageSharp.fluid && (
             <Img
               css={AuthorProfileImage}
               className="author-profile-image"
-              fluid={props.author.avatar.children[0].fluid}
+              fluid={props.author.avatar.childImageSharp.fluid}
               fadeIn={false}
             />
           )}
@@ -73,7 +73,7 @@ export const AuthorListItem: React.FC<AuthorListItemProps> = props => {
         <Img
           css={AuthorProfileImage}
           className="author-profile-image"
-          fluid={props.author.avatar.children[0].fluid}
+          fluid={props.author.avatar.childImageSharp.fluid}
           alt={props.author.id}
           fadeIn={false}
         />
@@ -103,7 +103,7 @@ const AuthorListItemLi = styled.li`
 const AuthorNameTooltip = styled.div`
   position: absolute;
   bottom: 105%;
-  z-index: 999;
+  z-index: -999;
   display: block;
   padding: 2px 8px;
   color: white;
@@ -218,8 +218,8 @@ const AuthorAvatar = css`
   display: block;
   overflow: hidden;
   margin: 0 -4px;
-  width: 40px;
-  height: 40px;
+  width: 140px;
+  height: 140px;
   border: #fff 2px solid;
   border-radius: 100%;
   transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 700ms;
@@ -232,5 +232,18 @@ const AuthorAvatar = css`
   @media (prefers-color-scheme: dark) {
     /* border-color: color(var(--darkgrey) l(+2%)); */
     border-color: ${lighten('0.02', colors.darkgrey)};
+  }
+`;
+const AuthorProfileImage2 = css`
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* background: color(var(--lightgrey) l(+10%)); */
+  background: ${lighten('0.1', colors.lightgrey)};
+  border-radius: 100%;
+  object-fit: cover;
+
+  @media (prefers-color-scheme: dark) {
+    background: ${colors.darkmode};
   }
 `;

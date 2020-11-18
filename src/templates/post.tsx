@@ -25,7 +25,10 @@ export interface Author {
   id: string;
   bio: string;
   avatar: {
-    children: Array<{
+    children?: Array<{
+      fluid: FluidObject;
+    }>;
+    childImageSharp?: Array<{ 
       fluid: FluidObject;
     }>;
   };
@@ -441,7 +444,7 @@ const PostFullImage = styled.figure`
 
 export const query = graphql`
   query($slug: String, $primaryTag: String) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/particle.png" }) {
       childImageSharp {
         fixed {
           ...GatsbyImageSharpFixed
