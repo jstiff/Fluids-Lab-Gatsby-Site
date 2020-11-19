@@ -5,10 +5,8 @@ import * as _ from 'lodash';
 import { lighten, setLightness } from 'polished';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-
 import { Footer } from '../components/Footer';
 import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import PostContent from '../components/PostContent';

@@ -76,9 +76,9 @@ export const SiteDescription = styled.h2`
   }
 `;
 
-// export const Posts = css`
-//   overflow-x: hidden;
-// `;
+export const Posts = css`
+  overflow-x: hidden;
+`;
 
 export const PostFeed = css`
   position: relative;

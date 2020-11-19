@@ -1,4 +1,4 @@
-import { graphql, Img } from 'gatsby';
+import { graphql } from 'gatsby';
 import { FixedObject } from 'gatsby-image';
 import React from 'react';
 import { FluidObject } from 'gatsby-image';
@@ -11,27 +11,26 @@ import Pagination from '../components/Pagination';
 import styled from '@emotion/styled';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
-import _ from 'lodash';
 import { AuthorListItem2 } from '../components/AuthorListItem2';
 import {
   inner,
   outer,
   PostFeed,
-  Posts,
+  //  Posts,
   SiteDescription,
   SiteHeader,
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
   SiteHeaderStyles,
-  AuthorProfileImage,
-  ResponsiveHeaderBackground,
-  SiteHeaderBackground,
+//   AuthorProfileImage,
+//   ResponsiveHeaderBackground,
+//   SiteHeaderBackground,
 } from '../styles/shared';
 import config from '../website-config';
 import { PageContext, Author } from '../templates/post';
-import { AuthorListUl } from '../components/AuthorList';
-//import Author from '../templates/author';
+// import { AuthorListUl } from '../components/AuthorList';
+// import Author from '../templates/author';
 
 export interface IndexProps {
   pageContext: {
@@ -80,7 +79,6 @@ export interface IndexProps {
 
 const People: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
-   
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
@@ -134,14 +132,16 @@ const People: React.FC<IndexProps> = props => {
           </div>
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
-          <div css={[inner, Posts]}>
+          <div css={[inner]}>
             <div css={[PostFeed]}>
-               {props.data.allAuthorYaml.edges.map((person, index)=>{
-                  return <>
-                    <AuthorListUl2 className="author-list">
-                        <AuthorListItem2 key={person.node.id} author={person.  node} tooltip="large" />
-                    </AuthorListUl2></>
-                })}
+              {props.data.allAuthorYaml.edges.map(person => (
+                <div key={person.node.id}>
+                  <AuthorListUl2 key={person.node.id} className="author-list">
+                    <AuthorListItem2 key={person.node.id} author={person.node} tooltip="large" />
+                  </AuthorListUl2>
+                </div>
+              ),
+              )}
             </div>
           </div>
         </main>
@@ -288,16 +288,7 @@ const HomePosts = css`
     }
   }
 `;
-const AuthorProfileBioImage = css`
-  z-index: 10;
-  flex-shrink: 0;
-  margin: 4px;
-  padding: 5px;
-  width: 250px;
-  height: 280px;
-  box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
-  border-radius: 10px;
-`;
+
 const AuthorListUl2 = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -307,7 +298,4 @@ const AuthorListUl2 = styled.ul`
   
 `;
 
-
 export default People;
-
-
