@@ -5,7 +5,6 @@ import styled from '@emotion/styled';
 
 import { colors } from './colors';
 
-
 export const outerVid = css`
   display:flex;
   flex-direction: row;

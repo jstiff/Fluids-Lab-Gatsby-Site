@@ -101,16 +101,6 @@ const IndexPage: React.FC<IndexProps> = props => {
             <SiteNav isHome />
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
-                {/* {props.data.logo ? (
-                  <h1>{config.title}</h1>
-                ) : (
-                  <img
-                    style={{ maxHeight: '55px' }}
-                    src={props.data.logo.childImageSharp.fixed.src}
-                    alt={config.title}
-                  />
-                 
-                )} */}
                 <h1>{config.title}</h1>
               </SiteTitle>
             </SiteHeaderContent>
@@ -120,11 +110,11 @@ const IndexPage: React.FC<IndexProps> = props => {
           <SiteDescription>{config.description}</SiteDescription>
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges.map((post, index) => {
+              {props.data.allMarkdownRemark.edges.map(post => {
                 // filter out drafts in production
                 return (
                   (post.node.frontmatter.draft !== true ||
-                    process.env.NODE_ENV !== 'production') && post.node.frontmatter.exclude !== true && (
+                    process.env.NODE_ENV !== 'production') && post.node.frontmatter.exclude && (
                     <PostCard key={post.node.fields.slug} post={post.node} />
                   )
                 );

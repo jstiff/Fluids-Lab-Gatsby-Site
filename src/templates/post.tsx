@@ -246,8 +246,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
           tags={post.frontmatter.tags}
           relatedPosts={data.relatedPosts}
           pageContext={pageContext}
-        /> 
-
+        />
         <Footer />
       </Wrapper>
     </IndexLayout>

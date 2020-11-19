@@ -11,7 +11,7 @@ import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import {
   outerVid,
-  vid, 
+  vid,
   inner,
   outer,
   SiteArchiveHeader,
@@ -60,9 +60,6 @@ const Videos: React.FC = () => (
               </PostFullHeader>
 
               <PostFullContent className="post-full-content">
-                <div className="post-content">
-                  
-                </div>
                 <div css={[outerVid]}>
                   <div css={[vid]}>
                     <Video
@@ -70,18 +67,8 @@ const Videos: React.FC = () => (
                       videoTitle="Pattern formation in suspension flows,” Saint Anthony Falls Lab, 10/13/2020"
                     />
                   </div>
-                
-                  {/* <div css={[vid]}>
-                    <Video
-                      videoSrcURL="http://www.teqipiitk.in/embed/php?e=832"
-                      videoTitle="Official Music Video on YouTube"
-                    />  
-                  </div> */}
                 </div>
-                
-                
               </PostFullContent>
-              
             </article>
           </div>
         </main>
