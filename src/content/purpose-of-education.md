@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Migration'
+title: 'Gas Migration'
 author: [Ben]
 tags: ['Paper']
 image: img/key.png

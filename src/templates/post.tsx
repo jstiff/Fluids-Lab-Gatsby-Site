@@ -28,9 +28,11 @@ export interface Author {
     children?: Array<{
       fluid: FluidObject;
     }>;
-    childImageSharp?: Array<{ 
-      fluid: FluidObject;
-    }>;
+    avatar: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
   };
 }
 

@@ -1,5 +1,5 @@
 ---
-title: Rui fluids paper
+title: Inviscid fluid
 author: [Rui]
 tags: [Rui paper]
 image: img/drop.jpg

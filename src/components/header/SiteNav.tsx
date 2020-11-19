@@ -140,7 +140,6 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>
             )}
           </SiteNavRight>
-          
         </nav>
       </>
     );

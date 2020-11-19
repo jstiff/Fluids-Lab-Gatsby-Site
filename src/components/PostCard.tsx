@@ -1,29 +1,17 @@
-import { format } from 'date-fns';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import _ from 'lodash';
 import { lighten } from 'polished';
 import React from 'react';
-
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-
 import { colors } from '../styles/colors';
 import { PageContext } from '../templates/post';
-import { AuthorList } from './AuthorList';
-
 export interface PostCardProps {
   post: PageContext;
   large?: boolean;
 }
 
 export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
-  const date = new Date(post.frontmatter.date);
-  // 2018-08-20
-  const datetime = format(date, 'yyyy-MM-dd');
-  // 20 AUG 2018
-  const displayDatetime = format(date, 'dd LLL yyyy');
-
   return (
     <article
       className={`post-card ${post.frontmatter.image ? '' : 'no-image'} ${
@@ -47,36 +35,12 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
       <PostCardContent className="post-card-content">
         <Link className="post-card-content-link" css={PostCardContentLink} to={post.fields.slug}>
           <PostCardHeader className="post-card-header">
-            {/* {post.frontmatter.tags && (
-              <PostCardPrimaryTag className="post-card-primary-tag">
-                {post.frontmatter.tags[0]}
-              </PostCardPrimaryTag>
-            )} */}
             <PostCardTitle className="post-card-title">{post.frontmatter.title}</PostCardTitle>
           </PostCardHeader>
-          {/* <PostCardExcerpt className="post-card-excerpt">
+          <PostCardExcerpt className="post-card-excerpt">
             <p>{post.frontmatter.excerpt || post.excerpt}</p>
-          </PostCardExcerpt> */}
+          </PostCardExcerpt>
         </Link>
-        {/* <PostCardMeta className="post-card-meta">
-          <AuthorList authors={post.frontmatter.author} tooltip="small" />
-          <PostCardBylineContent className="post-card-byline-content">
-            <span>
-              {post.frontmatter.author.map((author, index) => {
-                return (
-                  <React.Fragment key={author.id}>
-                    <Link to={`/author/${_.kebabCase(author.id)}/`}>{author.id}</Link>
-                    {post.frontmatter.author.length - 1 > index && ', '}
-                  </React.Fragment>
-                );
-              })}
-            </span>
-            <span className="post-card-byline-date">
-              <time dateTime={datetime}>{displayDatetime}</time>{' '}
-              <span className="bull">&bull;</span> {post.timeToRead} min read
-            </span>
-          </PostCardBylineContent>
-        </PostCardMeta> */}
       </PostCardContent>
     </article>
   );
@@ -183,16 +147,6 @@ const PostCardContentLink = css`
   }
 `;
 
-const PostCardPrimaryTag = styled.div`
-  margin: 0 0 0.2em;
-  /* color: var(--blue); */
-  color: ${colors.blue};
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  text-transform: uppercase;
-`;
-
 const PostCardTitle = styled.h2`
   margin: 0 0 0.4em;
   line-height: 1.15em;
@@ -209,42 +163,6 @@ const PostCardExcerpt = styled.section`
   @media (prefers-color-scheme: dark) {
     /* color: color(var(--midgrey) l(+10%)); */
     color: ${lighten('0.1', colors.midgrey)} !important;
-  }
-`;
-
-const PostCardMeta = styled.footer`
-  display: flex;
-  align-items: flex-start;
-  padding: 0;
-`;
-
-const PostCardBylineContent = styled.div`
-  flex: 1 1 50%;
-  display: flex;
-  flex-direction: column;
-  margin: 4px 0 0 10px;
-  /* color: color(var(--midgrey) l(+10%)); */
-  color: ${lighten('0.1', colors.midgrey)};
-  font-size: 1.2rem;
-  line-height: 1.4em;
-  font-weight: 400;
-  letter-spacing: 0.2px;
-  text-transform: uppercase;
-
-  span {
-    margin: 0;
-  }
-
-  a {
-    /* color: color(var(--darkgrey) l(+20%)); */
-    color: ${lighten('0.2', colors.darkgrey)};
-    font-weight: 600;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    a {
-      color: rgba(255, 255, 255, 0.75);
-    }
   }
 `;
 
