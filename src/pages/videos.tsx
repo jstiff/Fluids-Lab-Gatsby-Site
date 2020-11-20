@@ -9,6 +9,7 @@ import SiteNav from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
+import config from '../website-config';
 import {
   outerVid,
   vid,
@@ -62,10 +63,11 @@ const Videos: React.FC = () => (
               <PostFullContent className="post-full-content">
                 <div css={[outerVid]}>
                   <div css={[vid]}>
-                    <Video
-                      videoSrcURL="https://www.youtube.com/embed/qWHtcJOhD34"
-                      videoTitle="Pattern formation in suspension flows,” Saint Anthony Falls Lab, 10/13/2020"
-                    />
+                    {config.siteVideos.map(vid => 
+                      <Video
+                        videoSrcURL={vid}
+                        videoTitle="Pattern formation in suspension flows,” Saint   Anthony Falls Lab, 10/13/2020"
+                      /> )}
                   </div>
                 </div>
               </PostFullContent>

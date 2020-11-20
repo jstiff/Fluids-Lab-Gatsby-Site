@@ -65,6 +65,9 @@ const config: WebsiteConfig = {
   mailchimpEmailFieldName: 'MERGE0',
   googleSiteVerification: 'GoogleCode',
   footer: 'Dept of Mechanical Engineering U of M Twin Cities',
+  siteVideos: ["https://www.youtube.com/embed/qWHtcJOhD34", "https://www.youtube.com/embed/OpSmCKe27WE"], 
 };
 
 export default config;
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OpSmCKe27WE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
