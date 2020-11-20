@@ -6,7 +6,7 @@ tags:
 image: img/summary_image.jpg
 date: 1650-03-10T10:00:00.000Z
 draft: false
-exclude: false
+include: true
 # excerpt: Link to this published paper [Paper](https://doi.org/10.1103/PhysRevFluids.5.094301)
 ---
 

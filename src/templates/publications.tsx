@@ -454,7 +454,7 @@ export const query = graphql`
       excerpt
       timeToRead
       frontmatter {
-        exclude
+        include
         title
         userDate: date(formatString: "D MMMM YYYY")
         date

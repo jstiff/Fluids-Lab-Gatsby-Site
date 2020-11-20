@@ -13,7 +13,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   switch (node.internal.type) {
     case 'MarkdownRemark': {
       console.log('pooop', JSON.stringify(node.parent, undefined, 4));
-      const { permalink, layout, primaryTag, exclude } = node.frontmatter;
+      const { permalink, layout, primaryTag, include } = node.frontmatter;
       // console.log('GETnode', getNode(node.parent));
       const { relativePath } = getNode(node.parent);
 
@@ -44,8 +44,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       });
       createNodeField({
         node,
-        name: 'exclude',
-        value: exclude || '',
+        name: 'include',
+        value: include || '',
       });
     }
   }
@@ -66,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
             excerpt
             timeToRead
             frontmatter {
-              exclude
+              include
               title
               tags
               date
