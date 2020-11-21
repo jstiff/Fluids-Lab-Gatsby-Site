@@ -13,7 +13,7 @@ export const outerVid = css`
 
 export const vid = css`
   margin:25px;
-  padding: 10px;
+  padding: 20px;
 `;
 
 export const outer = css`

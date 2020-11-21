@@ -42,6 +42,9 @@ interface AuthorTemplateProps {
       }>;
     };
     authorYaml: {
+      interests: string;
+      schooling: string;
+      email: string;
       id: string;
       twitter?: string;
       facebook?: string;

@@ -70,4 +70,3 @@ const config: WebsiteConfig = {
 
 export default config;
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OpSmCKe27WE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

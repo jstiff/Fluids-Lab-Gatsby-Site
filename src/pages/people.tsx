@@ -57,6 +57,8 @@ export interface IndexProps {
       edges: Array<{
         node: Author;
         bio?: string;
+        schooling?: string;
+        interests?: string;
         avatar: {
           childImageSharp: {
             fluid: FluidObject;
@@ -223,6 +225,9 @@ export const pageQuery = graphql`
     allAuthorYaml {
         edges {
           node {
+            schooling
+            email
+            interests
             id
             bio
             location

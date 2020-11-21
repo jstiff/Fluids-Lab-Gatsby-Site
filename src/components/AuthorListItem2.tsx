@@ -17,7 +17,6 @@ interface AuthorListItem2Props {
 }
 
 export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
-  console.log("INSIDE AuthorListItem2 ...props", props)
   const [hovered, setHover] = useState(false);
   let timeout: ReturnType<typeof setTimeout>;
   function handleMouseEnter() {
@@ -57,9 +56,11 @@ export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
             <div className="bio">
               <h2>{props.author.id}</h2>
               <p>{props.author.bio}</p>
+              <p>{props.author.schooling}</p>
+              { props.author.interests !== "" && <p><b>Areas of Interests:</b> {props.author.interests}</p>}
               <p>Location: {props.author.location}</p>
               <lable>{"e-mail  "}</lable>
-              <a>{"example@gmail.com"}</a>
+              <a>{props.author.email}</a>
               <p>
                 <Link to={`/author/${_.kebabCase(props.author.id)}/`}>Papers</Link> by{' '}
                 {props.author.id}.
@@ -135,7 +136,7 @@ const AuthorCardStyles = css`
   display: flex;
   justify-content: space-between;
   margin-left: -250px;
-  margin-bottom: -100px;
+  margin-bottom: -200px;
   width: 500px;
   font-size: 2rem;
   line-height: 1.5em;
