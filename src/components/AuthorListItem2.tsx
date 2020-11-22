@@ -10,6 +10,7 @@ import { colors } from '../styles/colors';
 import { Author } from '../templates/post';
 import { AuthorProfileImage } from './PostCard';
 import styled from '@emotion/styled';
+import { prependOnceListener } from 'process';
 
 interface AuthorListItem2Props {
   tooltip: 'small' | 'large';
@@ -19,6 +20,10 @@ interface AuthorListItem2Props {
 export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
   const [hovered, setHover] = useState(false);
   let timeout: ReturnType<typeof setTimeout>;
+  
+  
+  
+
   function handleMouseEnter() {
     if (props.tooltip !== 'large') {
       return;
@@ -32,6 +37,10 @@ export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
     clearTimeout(timeout);
     timeout = setTimeout(() => setHover(false), 600);
   }
+
+    function copyEmail(e) {
+        alert(e.target.title)
+    }
 
   return (
     <AuthorListItemLi
@@ -60,7 +69,7 @@ export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
               { props.author.interests !== "" && <p><b>Areas of Interests:</b> {props.author.interests}</p>}
               <p>Location: {props.author.location}</p>
               <lable>{"e-mail  "}</lable>
-              <a>{props.author.email}</a>
+              <a href="#" id="email" title={props.author.email} style={{cursor: "pointer"} } onClick={(e)=> copyEmail(e)}>{props.author.email}</a>
               <p>
                 <Link to={`/author/${_.kebabCase(props.author.id)}/`}>Papers</Link> by{' '}
                 {props.author.id}.
