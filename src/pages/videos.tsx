@@ -63,14 +63,15 @@ const Videos: React.FC = () => (
 
               <PostFullContent className="post-full-content">
                 <div css={[outerVid]}>
-                 
-                  {vidUrl.url.map((v, i) => (
+                  {/* {JSON.stringify(vidUrl.urls)} */}
+                  {vidUrl.urls.map((v, i) => (
                     <div key={i} css={[vid]}>
                       <Video
                         videoSrcURL={v}
-                        videoTitle="Pattern formation in suspension flows,” Saint   Anthony Falls Lab, 10/13/2020"
+                        videoTitle="Pattern formation in suspension flows,”  Saint   Anthony Falls Lab, 10/13/2020"
                       />
-                    </div> )
+                    </div> 
+                  ),
                   )}
                 </div>
               </PostFullContent>

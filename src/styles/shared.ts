@@ -9,11 +9,12 @@ export const outerVid = css`
   display:flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap ;
 `;
 
 export const vid = css`
   margin:15px;
-  padding: 20px;
+  padding: 10px;
 `;
 
 export const outer = css`
