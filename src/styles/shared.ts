@@ -8,11 +8,11 @@ import { colors } from './colors';
 export const outerVid = css`
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 export const vid = css`
-  margin:25px;
+  margin:15px;
   padding: 20px;
 `;
 

@@ -10,6 +10,7 @@ import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import config from '../website-config';
+import vidUrl from '../content/video.yaml';
 import {
   outerVid,
   vid,
@@ -62,14 +63,15 @@ const Videos: React.FC = () => (
 
               <PostFullContent className="post-full-content">
                 <div css={[outerVid]}>
-                  {config.siteVideos.map(vid, i => 
+                 
+                  {vidUrl.url.map((v, i) => (
                     <div key={i} css={[vid]}>
                       <Video
-                        videoSrcURL={vid}
+                        videoSrcURL={v}
                         videoTitle="Pattern formation in suspension flows,” Saint   Anthony Falls Lab, 10/13/2020"
                       />
-                    </div>   
-                    )}
+                    </div> )
+                  )}
                 </div>
               </PostFullContent>
             </article>

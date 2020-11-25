@@ -65,7 +65,7 @@ const config: WebsiteConfig = {
   mailchimpEmailFieldName: 'MERGE0',
   googleSiteVerification: 'GoogleCode',
   footer: 'Dept of Mechanical Engineering U of M Twin Cities',
-  siteVideos: ["https://www.youtube.com/embed/qWHtcJOhD34", "https://www.youtube.com/embed/OpSmCKe27WE"], 
+  siteVideos: ["https://www.youtube.com/embed/qWHtcJOhD34", "https://www.youtube.com/embed/OpSmCKe27WE"],
 };
 
 export default config;

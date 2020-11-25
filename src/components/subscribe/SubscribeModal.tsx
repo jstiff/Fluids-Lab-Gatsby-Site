@@ -49,7 +49,7 @@ export class SubscribeModal extends React.Component<any, SubscribeState> {
           <SubscribeLogo />
           <SubscribeOverlayTitle>Subscribe to {config.title}</SubscribeOverlayTitle>
           <SubscribeOverlayDescription>
-            Get e-mail notification of new research papers written by the Research Lab.
+            Get e-mail notifications of our most recent research papers.
           </SubscribeOverlayDescription>
           <SubscribeForm />
         </SubscribeOverlayContent>

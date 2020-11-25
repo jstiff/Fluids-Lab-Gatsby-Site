@@ -39,7 +39,7 @@ export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
   }
 
     function copyEmail(e) {
-        alert(e.target.title)
+        alert(e.target.innerText)
     }
 
   return (
