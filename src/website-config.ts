@@ -51,7 +51,7 @@ export interface WebsiteConfig {
 const config: WebsiteConfig = {
   title: 'Sungyon Research Lab',
 
-  description: 'In our fluids research lab, we aim to uncover fundamental physical mechanisms that govern complex engineering applications and natural processes, by distilling them down to tractable problems. The process of discovering new research questions and formulating them into model problems is the most important aspect of our research. We then visualize the resultant model problems with table-top experiments, and simultaneously rationalize the experiments with mathematical modeling. ',
+  description: 'Welcome to our lab! We like to uncover fundamental physical mechanisms behind new fluid mechanics phenomena, through table-top experiments and mathematical modeling. In fact, distilling complex problems into tractable, simplified ones is our passion and a bit of a specialty of ours…. The physical systems we consider tend to be wide-ranging: interfacial dynamics of suspension flows, inertia-driven droplets, two-phase flows through porous media, and dynamics of particle rafts. While we are motivated by applications in energy, environment, and materials science, our work is quite fundamental and is genuinely driven by our desire to understand the physical world that involves fluids. Feel free to look around and see if anything interests you. Also feel free to contact us if you have any questions!',
   coverImage: 'img/blog-cover.png',
   logo: 'avatars/sungyon.JPEG',
   lang: 'en',

@@ -197,9 +197,9 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                   )}
                 </PostFullTags>
                 <PostFullTitle className="post-full-title">{post.frontmatter.title}</PostFullTitle>
-                <PostFullCustomExcerpt className="post-full-custom-excerpt">
+                {/* <PostFullCustomExcerpt className="post-full-custom-excerpt">
                   {post.frontmatter.excerpt}
-                </PostFullCustomExcerpt>
+                </PostFullCustomExcerpt> */}
                 <PostFullByline className="post-full-byline">
                   <section className="post-full-byline-content">
                     <AuthorList authors={post.frontmatter.author} tooltip="large" />
@@ -227,7 +227,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               {post.frontmatter.image?.childImageSharp && (
                 <PostFullImage>
                   <Img
-                    style={{ height: '100%' }}
+                    style={{ height: '100%', width: '100%' }}
                     fluid={post.frontmatter.image.childImageSharp.fluid}
                     alt={post.frontmatter.title}
                   />
@@ -416,9 +416,9 @@ export const PostFullTitle = styled.h1`
 `;
 
 const PostFullImage = styled.figure`
-  margin: 25px 33% 50px;
-  height: 350px;
-  width: 300px;
+  margin: 35px auto 60px;
+  height: 450px;
+  width: 650px;
   background: ${colors.lightgrey} center center;
   background-size: cover;
   border-radius: 25px;
