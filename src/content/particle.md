@@ -27,10 +27,7 @@ F. Xu*,3, J. Kim*,3 & S. Lee, “Particle-induced viscous fingering,” Journal 
 3co-lead authors
 <https://doi.org/10.1016/j.jnnfm.2016.06.014>
 
-Video:
-![](video.avi)
-
-<iframe src="https://www.youtube.com/embed/qWHtcJOhD34" width="600" height="337" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/qWHtcJOhD34"  style="height:300px;width:400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 As the extension of particle-induced viscous fingering, we are delving into miscible fingering without the influence of surface tension, by injecting pure oil into the mixture of the same oil and non-colloidal particles inside a Hele-Shaw cell. The experiments show qualitatively similar trends as pure liquids in the continuum limit but show clear deviations, as the channel confinement is increased. Hence, we aim to uncover how the discrete nature of particles may fundamentally change miscible fingering, by systematically increasing the channel confinement.
 
