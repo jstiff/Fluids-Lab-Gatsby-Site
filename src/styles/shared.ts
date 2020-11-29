@@ -28,6 +28,7 @@ export const inner = css`
   max-width: 1100px;
   width: 100%;
   
+  
 `;
 
 export const SiteNavMain = css`
@@ -84,12 +85,30 @@ export const PostFeed = css`
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  //display: grid;
+  //grid-template-columns: 33% 33% 33%;
+  //grid-template-rows: auto;
+  //grid-template-areas: 
+    "leader leader leader"
+    "main";
+  //justify-content: center;
   flex-wrap: wrap;
-  margin: 10 -20px;
-  padding: 50px 0 0;
+  //margin: 10 -20px;
+  //padding: 50px 0 0;
   background: #fff;
+  
   margin-top: 40px;
+   .leader-pic{
+     //grid-area: leader;
+     
+     width:100%;
+   }
+   .student-pic{
+     //grid-area: main;
+    
+   }
+
+  
 
   /* Special Template Styles */
   padding: 40px 0 5vw;

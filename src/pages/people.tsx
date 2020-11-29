@@ -137,11 +137,17 @@ const People: React.FC<IndexProps> = props => {
           <div css={[inner]}>
             <div css={[PostFeed]}>
               {props.data.allAuthorYaml.edges.map(person => (
-                <div key={person.node.id}>
-                  <AuthorListUl2 key={person.node.id} className="author-list">
-                    <AuthorListItem2 key={person.node.id} author={person.node} tooltip="large" />
-                  </AuthorListUl2>
-                </div>
+                (person.node.id === 'Sungyon Lee') ?
+                  <div key={person.node.id} className="leader-pic">
+                    <AuthorListUl2 key={person.node.id}>
+                      <AuthorListItem2 key={person.node.id} author={person.node} tooltip="large" />
+                    </AuthorListUl2>
+                  </div> :
+                  <div key={person.node.id} className="student-pic">
+                    <AuthorListUl2 key={person.node.id} className="author-lis">
+                      <AuthorListItem2 key={person.node.id} author={person.node} tooltip="large" />
+                    </AuthorListUl2>
+                  </div>
               ),
               )}
             </div>

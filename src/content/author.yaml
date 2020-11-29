@@ -51,3 +51,12 @@
   schooling: 'PhD: MIT'
   email: 'bdruecke@umn.edu'
   background: img/blog-cover.png
+- id: Yun Chen
+  avatar: avatars/yun.jpeg
+  bio: Post-doctoral researcher in Mechanical Engineering at University of Minnesota.
+  interests: 'Droplet dynamics/coalescence in microfluidics.'
+  profile_image: avatars/yun.jpeg
+  location: Minneapolis, MN
+  schooling: 'PhD: Texas A&M University'
+  email: 'chen5751@umn.edu'
+  background: img/blog-cover.png

@@ -104,7 +104,7 @@ const Hovered = css`
 const AuthorListItemLi = styled.li`
   position: relative;
   flex-shrink: 0;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 
   :hover .author-name-tooltip {
@@ -189,6 +189,7 @@ const AuthorCardStyles = css`
 
   .author-info .bio h2 {
     margin-top: 0;
+    
   }
 
   .author-info .bio p {

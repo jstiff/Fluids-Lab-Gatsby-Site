@@ -197,9 +197,9 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                   )}
                 </PostFullTags>
                 <PostFullTitle className="post-full-title">{post.frontmatter.title}</PostFullTitle>
-                {/* <PostFullCustomExcerpt className="post-full-custom-excerpt">
+                <PostFullCustomExcerpt className="post-full-custom-excerpt">
                   {post.frontmatter.excerpt}
-                </PostFullCustomExcerpt> */}
+                </PostFullCustomExcerpt>
                 <PostFullByline className="post-full-byline">
                   <section className="post-full-byline-content">
                     <AuthorList authors={post.frontmatter.author} tooltip="large" />
