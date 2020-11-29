@@ -122,7 +122,7 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
           </div>
 
           <ResponsiveHeaderBackground
-            // backgroundImage={author.profile_image?.childImageSharp.fluid.src}
+            backgroundImage={author.profile_image?.childImageSharp.fluid.src}
             css={[outer, SiteHeaderBackground]}
             className="site-header-background"
           >

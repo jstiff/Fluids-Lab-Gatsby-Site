@@ -30,7 +30,6 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-copy-linked-files',
           'gatsby-plugin-ffmpeg',
           {
             resolve: 'gatsby-remark-videos',
@@ -71,7 +70,7 @@ module.exports = {
             },
           },
           'gatsby-remark-prismjs',
-          
+          'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
           'gatsby-remark-abbr',
           {

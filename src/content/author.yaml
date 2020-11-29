@@ -3,43 +3,35 @@
   location: Minneapolis, MN
   schooling: 'PhD: MIT'
   interests: ''
+  profile_image: avatars/sungyon.JPEG
   background: img/blog-cover.png
   email: 'sungyon@umn.edu'
   bio: Assistant Professor in Mechanical Engineering at University of Minnesota
-- id: Alireza (Navid) Hooshanginejad
-  avatar: avatars/Navid.jpg
-  bio: Post-doctoral researcher in Biological and Environmental Engineering at Cornell University
-  interests: 'Dynamics of drops/bubbles, armored droplets, suspension flows, theory, experiments'
-  profile_image: avatars/Navid.jpg
-  location: Ithaca, NY
-  schooling: 'PhD: University of Minnesota'
-  email: 'hooshanginejad@cornell.edu'
+- id: Zih-Yin Chen
+  avatar: avatars/zih-yin.jpg
+  bio: PhD candidate in Mechanical Engineering at University of Minnesota
+  profile_image: avatars/zih-yin.jpeg
+  interests: 'Droplet impact on particles, droplet dynamics in wind, mathematical modeling, lubrication theory.'
+  location: Minneapolis, MN
+  schooling: 'PhD: MIT'
+  email: 'chen6562@umn.edu'
   background: img/blog-cover.png
 - id: Rui Luo
   avatar: avatars/Rui2.jpg
   background: img/blog-cover.png
   bio: PhD candidate in Mechanical Engineering at University of Minnesota
-  interests: 'Miscible fingering in suspensions, suspension flows in confinement, theory, experiments'
+  interests: 'Miscible fingering in suspensions, suspension flows in confinement, theory, experiments.'
   profile_image: avatars/Rui.jpg
   schooling: 'PhD: MIT'
   email: 'luoxx601@umn.edu'
   location: Minneapolis, MN
-- id: Zih-Yin Chen
-  avatar: avatars/zih-yin.jpg
-  bio: PhD candidate in Mechanical Engineering at University of Minnesota
-  profile_image: avatars/zih-yin.jpeg
-  interests: 'Droplet impact on particles, droplet dynamics in wind, mathematical modeling, lubrication theory'
-  location: Minneapolis, MN
-  schooling: 'PhD: MIT'
-  email: 'chen6562@umn.edu'
-  background: img/blog-cover.png
 - id: Zak Kujala
   avatar: avatars/zack.jpg
   bio: PhD candidate in Mechanical Engineering at University of Minnesota
   profile_image: avatars/zack.jpeg
   location: Minneapolis, MN
   schooling: 'HTC'
-  interests: 'Microfluidics, droplet dynamics and coalescence inside porous media, experiments'
+  interests: 'Microfluidics, droplet dynamics and coalescence inside porous media, experiments.'
   email: 'kujal014@umn.edu'
   background: img/blog-cover.png
 - id: Benjamin Druecke
@@ -51,9 +43,18 @@
   schooling: 'PhD: MIT'
   email: 'bdruecke@umn.edu'
   background: img/blog-cover.png
+- id: Alireza (Navid) Hooshanginejad
+  avatar: avatars/Navid.jpg
+  bio: 'Post-doctoral researcher in Biological and Environmental Engineering at Cornell University.'
+  interests: 'Dynamics of drops/bubbles, armored droplets, suspension flows, theory, experiments.'
+  profile_image: avatars/Navid.jpg
+  location: Ithaca, NY
+  schooling: 'PhD: University of Minnesota'
+  email: 'hooshanginejad@cornell.edu'
+  background: img/blog-cover.png
 - id: Yun Chen
   avatar: avatars/yun.jpeg
-  bio: Post-doctoral researcher in Mechanical Engineering at University of Minnesota.
+  bio: 'Post-doctoral researcher in Mechanical Engineering at University of Minnesota.'
   interests: 'Droplet dynamics/coalescence in microfluidics.'
   profile_image: avatars/yun.jpeg
   location: Minneapolis, MN
