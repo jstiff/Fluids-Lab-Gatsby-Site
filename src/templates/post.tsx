@@ -22,6 +22,9 @@ import { AuthorList } from '../components/AuthorList';
 export interface Author {
   id: string;
   bio: string;
+  schooling?: string;
+  interests?: string;
+  location?: string;
   avatar: {
     children?: Array<{
       fluid: FluidObject;

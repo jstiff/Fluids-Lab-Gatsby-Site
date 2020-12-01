@@ -1,16 +1,13 @@
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 import * as _ from 'lodash';
 import { lighten } from 'polished';
 import React, { useState } from 'react';
-
 import { css } from '@emotion/core';
-
 import { colors } from '../styles/colors';
 import { Author } from '../templates/post';
 import { AuthorProfileImage } from './PostCard';
 import styled from '@emotion/styled';
-import { prependOnceListener } from 'process';
 
 interface AuthorListItem2Props {
   tooltip: 'small' | 'large';
@@ -20,9 +17,6 @@ interface AuthorListItem2Props {
 export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
   const [hovered, setHover] = useState(false);
   let timeout: ReturnType<typeof setTimeout>;
-  
-  
-  
 
   function handleMouseEnter() {
     if (props.tooltip !== 'large') {
@@ -37,10 +31,6 @@ export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
     clearTimeout(timeout);
     timeout = setTimeout(() => setHover(false), 600);
   }
-
-    function copyEmail(e) {
-        alert(e.target.innerText)
-    }
 
   return (
     <AuthorListItemLi
@@ -66,10 +56,10 @@ export const AuthorListItem2: React.FC<AuthorListItem2Props> = props => {
               <h2>{props.author.id}</h2>
               <p>{props.author.bio}</p>
               <p>{props.author.schooling}</p>
-              { props.author.interests !== "" && <p><b>Areas of Interests:</b> {props.author.interests}</p>}
+              { props.author.interests !== '' && <p><b>Areas of Interests:</b> {props.author.interests}</p>}
               <p>Location: {props.author.location}</p>
-              <lable>{"e-mail  "}</lable>
-              <a href="#" id="email" title={props.author.email} style={{cursor: "pointer"} } onClick={(e)=> copyEmail(e)}>{props.author.email}</a>
+              <lable>{'e-mail  '}</lable>
+              <a href="#" id="email" title={props.author.email} style={{ cursor: 'pointer' }}>{props.author.email}</a>
               <p>
                 <Link to={`/author/${_.kebabCase(props.author.id)}/`}>Papers</Link> by{' '}
                 {props.author.id}.
@@ -249,16 +239,4 @@ const AuthorAvatar = css`
     border-color: ${lighten('0.02', colors.darkgrey)};
   }
 `;
-const AuthorProfileImage2 = css`
-  display: block;
-  width: 100%;
-  height: 100%;
-  /* background: color(var(--lightgrey) l(+10%)); */
-  background: ${lighten('0.1', colors.lightgrey)};
-  border-radius: 100%;
-  object-fit: cover;
 
-  @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
-  }
-`;

@@ -3,7 +3,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { FluidObject } from 'gatsby-image';
-import { Img } from 'gatsby';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
@@ -306,12 +305,6 @@ const AuthorMeta = css`
   }
 `;
 
-const AuthorSocialLink = styled.span`
-  display: inline-block;
-  margin: 0;
-  padding: 6px 0;
-`;
-
 const AuthorBio = styled.h2`
   z-index: 10;
   flex-shrink: 0;
@@ -343,15 +336,6 @@ const AuthorProfileBioImage = css`
   height: 100%;
   box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
   border-radius: 10px;
-`;
-
-const AuthorSocialLinkAnchor = styled.a`
-  color: #fff;
-  font-weight: 600;
-
-  :hover {
-    opacity: 1;
-  }
 `;
 
 export default Author;

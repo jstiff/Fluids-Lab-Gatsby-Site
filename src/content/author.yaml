@@ -13,7 +13,7 @@
   profile_image: img/blog-cover.png
   interests: 'Droplet impact on particles, droplet dynamics in wind, mathematical modeling, lubrication theory.'
   location: Minneapolis, MN
-  schooling: 'PhD: MIT'
+  schooling: 'U of M'
   email: 'chen6562@umn.edu'
   background: img/blog-cover.png
 - id: Benjamin Druecke
@@ -30,7 +30,7 @@
   bio: PhD candidate in Mechanical Engineering at University of Minnesota
   profile_image: img/blog-cover.png
   location: Minneapolis, MN
-  schooling: 'HTC'
+  schooling: 'U of M'
   interests: 'Microfluidics, droplet dynamics and coalescence inside porous media, experiments.'
   email: 'kujal014@umn.edu'
   background: img/blog-cover.png
@@ -40,7 +40,7 @@
   bio: PhD candidate in Mechanical Engineering at University of Minnesota
   interests: 'Miscible fingering in suspensions, suspension flows in confinement, theory, experiments.'
   profile_image: img/blog-cover.png
-  schooling: 'PhD: MIT'
+  schooling: 'U of M'
   email: 'luoxx601@umn.edu'
   location: Minneapolis, MN
 - id: Alireza (Navid) Hooshanginejad

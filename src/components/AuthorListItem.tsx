@@ -3,9 +3,7 @@ import Img from 'gatsby-image';
 import * as _ from 'lodash';
 import { lighten } from 'polished';
 import React, { useState } from 'react';
-
 import { css } from '@emotion/core';
-
 import { colors } from '../styles/colors';
 import { Author } from '../templates/post';
 import { AuthorProfileImage } from './PostCard';
