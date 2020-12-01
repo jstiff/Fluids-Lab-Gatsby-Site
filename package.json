@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-casper",
-  "description": "Casper for gatsby",
+  "name": "Sungyon-lab",
+  "description": "U of M Website",
   "version": "0.0.0",
   "private": true,
-  "author": "Scott Cooper <scttcper@gmail.com>",
+  "author": "Jason Stiff <none@gmail.com>",
   "license": "MIT",
   "scripts": {
     "clean": "gatsby clean",
@@ -27,7 +27,6 @@
     "gatsby-plugin-canonical-urls": "2.3.10",
     "gatsby-plugin-emotion": "4.3.10",
     "gatsby-plugin-feed": "2.5.11",
-    "gatsby-plugin-ffmpeg": "^0.3.1",
     "gatsby-plugin-global-styles": "^1.0.17",
     "gatsby-plugin-google-analytics": "2.3.13",
     "gatsby-plugin-postcss": "2.3.11",
@@ -41,7 +40,6 @@
     "gatsby-remark-prismjs": "3.5.11",
     "gatsby-remark-responsive-iframe": "2.4.13",
     "gatsby-remark-smartypants": "2.3.10",
-    "gatsby-remark-videos": "^0.3.5",
     "gatsby-source-filesystem": "2.3.29",
     "gatsby-transformer-json": "2.4.11",
     "gatsby-transformer-remark": "2.8.34",

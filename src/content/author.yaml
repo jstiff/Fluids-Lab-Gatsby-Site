@@ -16,24 +16,6 @@
   schooling: 'PhD: MIT'
   email: 'chen6562@umn.edu'
   background: img/blog-cover.png
-- id: Rui Luo
-  avatar: avatars/Rui2.jpg
-  background: img/blog-cover.png
-  bio: PhD candidate in Mechanical Engineering at University of Minnesota
-  interests: 'Miscible fingering in suspensions, suspension flows in confinement, theory, experiments.'
-  profile_image: avatars/Rui.jpg
-  schooling: 'PhD: MIT'
-  email: 'luoxx601@umn.edu'
-  location: Minneapolis, MN
-- id: Zak Kujala
-  avatar: avatars/zack.jpg
-  bio: PhD candidate in Mechanical Engineering at University of Minnesota
-  profile_image: avatars/zack.jpeg
-  location: Minneapolis, MN
-  schooling: 'HTC'
-  interests: 'Microfluidics, droplet dynamics and coalescence inside porous media, experiments.'
-  email: 'kujal014@umn.edu'
-  background: img/blog-cover.png
 - id: Benjamin Druecke
   avatar: avatars/ben.jpg
   bio: Post-doctoral researcher in Mechanical Engineering at University of Minnesota.
@@ -43,6 +25,24 @@
   schooling: 'PhD: MIT'
   email: 'bdruecke@umn.edu'
   background: img/blog-cover.png
+- id: Zak Kujala
+  avatar: avatars/zack.jpg
+  bio: PhD candidate in Mechanical Engineering at University of Minnesota
+  profile_image: avatars/zack.jpeg
+  location: Minneapolis, MN
+  schooling: 'HTC'
+  interests: 'Microfluidics, droplet dynamics and coalescence inside porous media, experiments.'
+  email: 'kujal014@umn.edu'
+  background: img/blog-cover.png
+- id: Rui Luo
+  avatar: avatars/Rui2.jpg
+  background: img/blog-cover.png
+  bio: PhD candidate in Mechanical Engineering at University of Minnesota
+  interests: 'Miscible fingering in suspensions, suspension flows in confinement, theory, experiments.'
+  profile_image: avatars/Rui.jpg
+  schooling: 'PhD: MIT'
+  email: 'luoxx601@umn.edu'
+  location: Minneapolis, MN
 - id: Alireza (Navid) Hooshanginejad
   avatar: avatars/Navid.jpg
   bio: 'Post-doctoral researcher in Biological and Environmental Engineering at Cornell University.'
